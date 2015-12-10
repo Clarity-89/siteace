@@ -29,20 +29,29 @@ if (Meteor.isClient) {
 
             // make sure a user hasn't voted before
             if (!hasUpvoted) {
-                Websites.update({_id: website_id}, {$push: {upvotedBy: user}, $pull:{downvotedBy:user},$inc: {upvotes: 1}});
+                Websites.update({_id: website_id}, {
+                    $push: {upvotedBy: user},
+                    $pull: {downvotedBy: user},
+                    $inc: {upvotes: 1}
+                });
             } else {
                 console.log('You can upvote each site only once!');
             }
             return false; // prevent the button from reloading the page
         },
+
         "click .js-downvote": function (event) {
             var user = Meteor.userId();
             var website_id = this._id;
             var hasDownvoted = Websites.find({_id: website_id, downvotedBy: user}).count();
 
-            // make sure a user hasn't voted before
-            if (!hasDownvoted) {
-                Websites.update({_id: website_id}, {$push: {downvotedBy: user}, $pull: {upvotedBy: user}, $inc: {upvotes: -1}});
+            // make sure a user hasn't voted before and upvotes value is more than zero
+            if (!hasDownvoted && this.upvotes) {
+                Websites.update({_id: website_id}, {
+                    $push: {downvotedBy: user},
+                    $pull: {upvotedBy: user},
+                    $inc: {upvotes: -1}
+                });
             } else {
                 console.log('You can downvote each site only once!');
             }
