@@ -29,7 +29,7 @@ if (Meteor.isClient) {
     Template.home.helpers({
         topRated: function () {
 
-            return Websites.find({}, {sort: {upvotes: -1}, limit: 7});
+            return Websites.find({}, {sort: {upvotes: -1}, limit: 6});
 
         }
     });
@@ -86,18 +86,21 @@ if (Meteor.isClient) {
             // here is an example of how to get the url out of the form:
             var url = event.target.url.value,
                 title = event.target.title.value,
-                description = event.target.description.value,
-                alertForm = document.getElementsByClassName('alert')[0];
-            // Make all field mandatory
+                description = event.target.description.value;
+            var meta = '';
+            extractMeta('http://' + url, function (err, res) {
+                meta = res.title || res.description;
+                return meta;
+            });
+            var alertForm = document.getElementsByClassName('alert')[0];
+            console.log('meta', meta);
+            // Make url and title fields mandatory
             if (!url) {
                 alertForm.innerHTML = "You didn't enter the url!";
                 alertForm.style.display = 'block';
                 return false;
             } else if (!title) {
                 alertForm.innerHTML = "You didnt enter the title!";
-                alertForm.style.display = 'block';
-            } else if (!description) {
-                alertForm.innerHTML = "You didn't enter the description!";
                 alertForm.style.display = 'block';
             } else {
                 alertForm.style.display = 'none';

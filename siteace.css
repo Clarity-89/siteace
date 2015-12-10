@@ -16,11 +16,11 @@ ul {
 }
 
 .jumbotron {
-    background: url('https://pixabay.com/get/ef31b60f29f71c22d9584518a33219c8b66ae3d11db816469df9c579_1920.jpg') no-repeat center;
+    background: url('https://c2.staticflickr.com/8/7213/6887025506_38362b2f59_b.jpg') no-repeat;
     background-size: cover;
     margin-bottom: 0;
     text-align: center;
-    color: dodgerblue;
+    color: white;
 }
 
 #heading {
@@ -35,5 +35,14 @@ ul {
 }
 
 .title {
+    font-size: 18px;
+}
+
+#list {
+    margin-top: 3%;
+}
+
+#upvotes {
+    margin-right: 20px;
     font-size: 18px;
 }
