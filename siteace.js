@@ -1,6 +1,16 @@
 Websites = new Mongo.Collection("websites");
 
 if (Meteor.isClient) {
+
+    //routes
+    Router.route('/', function () {
+        this.render('Home');
+    });
+
+    Router.route('/sites', function () {
+        this.render('sites');
+    });
+
     // Add username field to sign up form
     Accounts.ui.config({
         passwordSignupFields: 'USERNAME_AND_EMAIL'
@@ -15,6 +25,15 @@ if (Meteor.isClient) {
             return Websites.find({}, {sort: {upvotes: -1}});
         }
     });
+
+    Template.home.helpers({
+        topRated: function () {
+
+            return Websites.find({}, {sort: {upvotes: -1}, limit: 7});
+
+        }
+    });
+
     Template.registerHelper('formatDate', function (date) {
         return moment(date).format('DD-MM-YYYY');
     });
@@ -101,17 +120,18 @@ if (Meteor.isServer) {
     Meteor.startup(function () {
         // code to run on server at startup
         if (!Websites.findOne()) {
+
             console.log("No websites yet. Creating starter data.");
             Websites.insert({
-                title: "Goldsmiths Computing Department",
-                url: "http://www.gold.ac.uk/computing/",
-                description: "This is where this course was developed.",
+                title: "Free Code Camp",
+                url: "http://freecodecamp.com/",
+                description: extractMeta('http://freecodecamp.com/').description || extractMeta('http://freecodecamp.com/').title,
                 createdOn: new Date()
             });
             Websites.insert({
-                title: "University of London",
-                url: "http://www.londoninternational.ac.uk/courses/undergraduate/goldsmiths/bsc-creative-computing-bsc-diploma-work-entry-route",
-                description: "University of London International Programme.",
+                title: "Codewars",
+                url: "http://www.codewars.com",
+                description: extractMeta('http://www.codewars.com').description || extractMeta('http://www.codewars.com').title,
                 createdOn: new Date()
             });
             Websites.insert({
@@ -121,9 +141,21 @@ if (Meteor.isServer) {
                 createdOn: new Date()
             });
             Websites.insert({
-                title: "Google",
-                url: "http://www.google.com",
-                description: "Popular search engine.",
+                title: "Codecademy",
+                url: "https://www.codecademy.com/",
+                description: extractMeta('https://www.codecademy.com/').description || extractMeta('https://www.codecademy.com/').title,
+                createdOn: new Date()
+            });
+            Websites.insert({
+                title: 'Mozilla Developer Network',
+                url: 'https://developer.mozilla.org/',
+                description: extractMeta('https://developer.mozilla.org/').description || extractMeta('https://developer.mozilla.org/').title,
+                createdOn: new Date()
+            });
+            Websites.insert({
+                title: 'edX',
+                url: 'https://www.edx.org/',
+                description: extractMeta('https://www.edx.org/').description || extractMeta('https://www.edx.org/').title,
                 createdOn: new Date()
             });
         }

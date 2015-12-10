@@ -7,7 +7,7 @@
 <nav class="navbar navbar-default">
     <div class="container-fluid">
         <div class="navbar-header">
-            <a class="navbar-brand" href="#">
+            <a class="navbar-brand" href="/">
                 Site Ace
             </a>
 
@@ -18,12 +18,33 @@
     </div>
 </nav>
 
-<div class="container">
-    {{> website_form}}
-    {{> website_list}}
-</div>
+
 </body>
 
+<template name="home">
+    <div class="jumbotron">
+        <div class="container">
+            <h3>Welcome to Site Ace! Here you can submit your favourite programming websites or
+                to rate and discuss submissions of others.</h3>
+            <a class="btn btn-default btn-lg" href="/sites">See all websites</a>
+        </div>
+    </div>
+    <div class="container">
+        <h3 id="heading">Top rated websites</h3>
+        <div class="row">
+            {{#each topRated}}
+                {{>topRated_item}}
+            {{/each}}
+        </div>
+    </div>
+</template>
+
+<template name="sites">
+    <div class="container">
+        {{> website_form}}
+        {{> website_list}}
+    </div>
+</template>
 
 <template name="website_form">
     {{#if currentUser}}
@@ -63,20 +84,38 @@
     </ul>
 </template>
 
+
+<template name="topRated_item">
+
+    <div class="col-xs-6 col-md-4">
+        <div class="thumbnail">
+            <a href="{{url}}">
+                <p class="title">{{title}}</p>
+            </a>
+            <p>
+                {{{description}}}
+            </p>
+            <p>{{upvotes}}</p>
+        </div>
+    </div>
+
+</template>
 <!-- template that displays individual website entries -->
 <template name="website_item">
     <li class="list-group-item">
-        <a href="{{url}}">{{title}}</a>
+        <a href="{{url}}">
+            <p class="title">{{title}}</p></a>
         <p>
             {{description}}
         </p>
+        <p>{{upvotes}}</p>
         <a href="#" class="btn btn-default btn-sm js-upvote">
-            <span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span>
+            <span class="glyphicon glyphicon-thumbs-up" aria-hidden="true"></span>
         </a>
-        {{upvotes}}
+
         <a href="#" class="btn btn-default btn-sm js-downvote">
-            <span class="glyphicon glyphicon-arrow-down" aria-hidden="true"></span>
+            <span class="glyphicon glyphicon-thumbs-down" aria-hidden="true"></span>
         </a>
-        <p>Submitted on {{formatDate createdOn}}</p>
+        <p>Added on {{formatDate createdOn}}</p>
     </li>
 </template>

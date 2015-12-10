@@ -1,11 +1,39 @@
 /* CSS declarations go here */
-.hidden_div{
-	display:none;
+.hidden_div {
+    display: none;
 }
 
 ul {
-	list-style-type: none;
+    list-style-type: none;
 }
+
 .alert {
-	display: none; 
+    display: none;
+}
+
+.navbar {
+    margin-bottom: 0;
+}
+
+.jumbotron {
+    background: url('https://pixabay.com/get/ef31b60f29f71c22d9584518a33219c8b66ae3d11db816469df9c579_1920.jpg') no-repeat center;
+    background-size: cover;
+    margin-bottom: 0;
+    text-align: center;
+    color: dodgerblue;
+}
+
+#heading {
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.thumbnail {
+    height: 200px;
+    overflow: auto;
+}
+
+.title {
+    font-size: 18px;
 }
