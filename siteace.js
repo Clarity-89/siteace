@@ -15,7 +15,9 @@ if (Meteor.isClient) {
             return Websites.find({}, {sort: {upvotes: -1}});
         }
     });
-
+    Template.registerHelper('formatDate', function (date) {
+        return moment(date).format('DD-MM-YYYY');
+    });
     /////
     // template events
     /////
