@@ -34,8 +34,6 @@ if (Meteor.isClient) {
                     $pull: {downvotedBy: user},
                     $inc: {upvotes: 1}
                 });
-            } else {
-                console.log('You can upvote each site only once!');
             }
             return false; // prevent the button from reloading the page
         },
@@ -52,8 +50,6 @@ if (Meteor.isClient) {
                     $pull: {upvotedBy: user},
                     $inc: {upvotes: -1}
                 });
-            } else {
-                console.log('You can downvote each site only once!');
             }
 
             return false; // prevent the button from reloading the page
