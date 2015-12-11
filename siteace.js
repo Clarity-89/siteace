@@ -119,7 +119,13 @@ if (Meteor.isClient) {
         "focus #title": function () {
             var url = document.getElementById('url').value.replace('http://', '');
             extractMeta('http://' + url, function (err, res) {
-                document.getElementById('title').value = res.title;
+
+                // Create a backup title extracted from the url
+                url = 'www.' + url.replace('www.', '');
+                var match = url.match(/\.([^.]+?)\./)[1],
+                    backupTitle = match[0].toUpperCase() + match.slice(1, match.length);
+
+                document.getElementById('title').value = res.title || backupTitle;
                 document.getElementById('description').value = res.description;
             });
         }
