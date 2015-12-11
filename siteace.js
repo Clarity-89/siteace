@@ -84,37 +84,46 @@ if (Meteor.isClient) {
         "submit .js-save-website-form": function (event) {
 
             // here is an example of how to get the url out of the form:
-            var url = event.target.url.value,
-                title = event.target.title.value,
-                description = event.target.description.value;
-            var meta = '';
-            extractMeta('http://' + url, function (err, res) {
-                meta = res.title || res.description;
-                return meta;
-            });
-            var alertForm = document.getElementsByClassName('alert')[0];
-            console.log('meta', meta);
-            // Make url and title fields mandatory
-            if (!url) {
-                alertForm.innerHTML = "You didn't enter the url!";
-                alertForm.style.display = 'block';
-                return false;
-            } else if (!title) {
-                alertForm.innerHTML = "You didnt enter the title!";
-                alertForm.style.display = 'block';
-            } else {
-                alertForm.style.display = 'none';
-                Websites.insert({
-                    title: title,
-                    url: url,
-                    description: description,
-                    createdOn: new Date()
-                });
-            }
-            console.log("The url they entered is: " + url);
-            return false; // stop the form submit from reloading the page
+            var url = event.target.url.value.replace('http://', '');
 
+            extractMeta('http://' + url, function (err, res) {
+                var title = event.target.title.value,
+                    description = event.target.description.value || res.title || res.description;
+
+                var alertForm = document.getElementsByClassName('alert')[0];
+
+                // Make url and title fields mandatory
+                if (!url) {
+                    alertForm.innerHTML = "You didn't enter the url!";
+                    alertForm.style.display = 'block';
+                    return false;
+                } else if (!title) {
+                    alertForm.innerHTML = "You didn't enter the title!";
+                    alertForm.style.display = 'block';
+                } else {
+                    alertForm.style.display = 'none';
+                    Websites.insert({
+                        title: title,
+                        url: url,
+                        description: description,
+                        createdOn: new Date()
+                    });
+                }
+                $("#website_form").toggle('slow');
+
+            });
+            return false; // stop the form submit from reloading the page
+        },
+
+        // Fill title and description fields on focus
+        "focus #title": function () {
+            var url = document.getElementById('url').value.replace('http://', '');
+            extractMeta('http://' + url, function (err, res) {
+                document.getElementById('title').value = res.title;
+                document.getElementById('description').value = res.description;
+            });
         }
+
     });
 }
 
