@@ -1,5 +1,16 @@
 Websites = new Mongo.Collection("websites");
 
+// Set permissions for modifying the collection
+Websites.allow({
+    insert: function () {
+        return true;
+    },
+
+    update: function () {
+        return true;
+    }
+});
+
 if (Meteor.isClient) {
 
     //routes
@@ -135,7 +146,7 @@ if (Meteor.isClient) {
                     backupTitle = match[0].toUpperCase() + match.slice(1, match.length);
 
                 document.getElementById('title').value = res.title || backupTitle;
-                document.getElementById('description').value = res.description;
+                document.getElementById('description').value = res.description || '';
             });
         }
     });
@@ -171,37 +182,43 @@ if (Meteor.isServer) {
                 title: "Free Code Camp",
                 url: "http://freecodecamp.com/",
                 description: extractMeta('http://freecodecamp.com/').description || extractMeta('http://freecodecamp.com/').title,
-                createdOn: new Date()
+                createdOn: new Date(),
+                upvotes: 5
             });
             Websites.insert({
                 title: "Codewars",
                 url: "http://www.codewars.com",
                 description: extractMeta('http://www.codewars.com').description || extractMeta('http://www.codewars.com').title,
-                createdOn: new Date()
+                createdOn: new Date(),
+                upvotes: 8
             });
             Websites.insert({
                 title: "Coursera",
                 url: "http://www.coursera.org",
                 description: "Universal access to the world’s best education.",
-                createdOn: new Date()
+                createdOn: new Date(),
+                upvotes: 10
             });
             Websites.insert({
                 title: "Codecademy",
                 url: "https://www.codecademy.com/",
                 description: extractMeta('https://www.codecademy.com/').description || extractMeta('https://www.codecademy.com/').title,
-                createdOn: new Date()
+                createdOn: new Date(),
+                upvotes: 3
             });
             Websites.insert({
                 title: 'Mozilla Developer Network',
                 url: 'https://developer.mozilla.org/',
                 description: extractMeta('https://developer.mozilla.org/').description || extractMeta('https://developer.mozilla.org/').title,
-                createdOn: new Date()
+                createdOn: new Date(),
+                upvotes: 9
             });
             Websites.insert({
                 title: 'edX',
                 url: 'https://www.edx.org/',
                 description: extractMeta('https://www.edx.org/').description || extractMeta('https://www.edx.org/').title,
-                createdOn: new Date()
+                createdOn: new Date(),
+                upvotes: 5
             });
         }
     });
