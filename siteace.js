@@ -11,13 +11,24 @@ if (Meteor.isClient) {
         this.render('sites');
     });
 
+    Router.route('/sites/:_id', function () {
+
+        this.render('site', {
+            data: function () {
+                return Websites.findOne({_id: this.params._id});
+            }
+        });
+
+    });
+
     // Add username field to sign up form
     Accounts.ui.config({
         passwordSignupFields: 'USERNAME_AND_EMAIL'
     });
-    /////
-    // template helpers
-    /////
+
+
+    /* template helpers*/
+
 
     // helper function that returns all available websites
     Template.website_list.helpers({
@@ -88,7 +99,7 @@ if (Meteor.isClient) {
 
             extractMeta('http://' + url, function (err, res) {
                 var title = event.target.title.value,
-                    description = event.target.description.value || res.title || res.description;
+                    description = event.target.description.value || res.description || res.title;
 
                 var alertForm = document.getElementsByClassName('alert')[0];
 
@@ -129,7 +140,6 @@ if (Meteor.isClient) {
                 document.getElementById('description').value = res.description;
             });
         }
-
     });
 }
 
