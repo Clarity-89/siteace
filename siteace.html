@@ -3,7 +3,7 @@
 </head>
 
 <body>
-<!-- navbar  - you will be putting the login functions here -->
+
 <nav class="navbar navbar-default">
     <div class="container-fluid">
         <div class="navbar-header">
@@ -12,12 +12,12 @@
             </a>
 
         </div>
-        <ul class="nav navbar-nav navbar-right">
+        <ul id="signup">
             {{> loginButtons}}
         </ul>
+
     </div>
 </nav>
-
 
 </body>
 
@@ -91,14 +91,15 @@
 <template name="topRated_item">
 
     <div class="col-xs-6 col-md-4">
-        <div class="thumbnail">
+        <div class="thumbnail" id="padded">
             <a href="{{url}}">
                 <p class="title">{{title}}</p>
             </a>
             <p>
                 {{{description}}}
             </p>
-            <p>{{upvotes}}</p>
+            <p class="upvotes"><span class="glyphicon glyphicon-thumbs-up"
+                                     aria-hidden="true"></span>{{#if upvotes}} {{upvotes}} {{else}} 0 {{/if}}</p>
         </div>
     </div>
 
@@ -107,12 +108,12 @@
 <template name="website_item">
     <a href="/sites/{{_id}}" class="list-group-item">
         <a href="{{url}}">
-            <p class="title">{{title}}</p>
+            <p class="title list-group-item-heading">{{title}}</p>
         </a>
         <p>{{description}}</p>
 
-        <p id="upvotes"><span class="glyphicon glyphicon-thumbs-up"
-                              aria-hidden="true"></span>{{#if upvotes}} {{upvotes}} {{else}} 0 {{/if}}</p>
+        <p class="upvotes"><span class="glyphicon glyphicon-thumbs-up"
+                                 aria-hidden="true"></span>{{#if upvotes}} {{upvotes}} {{else}} 0 {{/if}}</p>
 
         {{#if currentUser}}
             <a href="#" class="btn btn-default btn-sm js-upvote">
@@ -128,9 +129,32 @@
 </template>
 <template name="site">
     <div class="container">
-        <h3>{{title}}</h3>
+        <h2>{{title}}</h2>
         <p>{{description}}</p>
-        <p id="upvotes"><span class="glyphicon glyphicon-thumbs-up"
-                              aria-hidden="true"></span>{{#if upvotes}} {{upvotes}} {{else}} 0 {{/if}}</p></div>
+        <p class="upvotes"><span class="glyphicon glyphicon-thumbs-up"
+                                 aria-hidden="true"></span>{{#if upvotes}} {{upvotes}} {{else}} 0 {{/if}}</p>
 
+        <div class="comments">
+            <h3>Comments</h3>
+            {{#if comments}}
+                <ul class="list-group">
+                    {{#each comments}}
+                        <li class="list-group-item">
+                            <p id="date">{{this.date}}</p>
+                            <p id="user">{{this.user}}</p>
+                            <p id="comment-text">{{this.text}}</p>
+                        </li>
+                    {{/each}}
+                </ul>
+            {{else}}
+                <p>No comments yet...</p>
+            {{/if}}
+        </div>
+        <div class="input-group">
+            <textarea class="form-control" rows="3" id='comment' placeholder="Leave a comment..."></textarea>
+            <span class="input-group-addon btn btn-primary js-add-comment">Submit</span>
+        </div>
+
+
+    </div>
 </template>

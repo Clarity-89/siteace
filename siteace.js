@@ -39,9 +39,7 @@ if (Meteor.isClient) {
 
     Template.home.helpers({
         topRated: function () {
-
             return Websites.find({}, {sort: {upvotes: -1}, limit: 6});
-
         }
     });
 
@@ -138,6 +136,25 @@ if (Meteor.isClient) {
 
                 document.getElementById('title').value = res.title || backupTitle;
                 document.getElementById('description').value = res.description;
+            });
+        }
+    });
+
+    Template.site.events({
+        "click .js-add-comment": function (event) {
+
+            var website_id = this._id;
+            var comment = $('#comment').val();
+            var username = Meteor.user() ? Meteor.user().username : 'Anonymous';
+            console.log(username);
+            Websites.update({_id: website_id}, {
+                $push: {
+                    comments: {
+                        text: comment,
+                        date: moment().format('MMM DD YYYY, h:mm:ss a'),
+                        user: username
+                    }
+                }
             });
         }
     });
