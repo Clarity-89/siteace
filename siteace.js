@@ -94,6 +94,9 @@ if (Meteor.isClient) {
             }
 
             return false; // prevent the button from reloading the page
+        },
+        "click a": function (event) {
+            event.stopPropagation();
         }
     });
 
@@ -104,9 +107,9 @@ if (Meteor.isClient) {
         "submit .js-save-website-form": function (event) {
 
             // here is an example of how to get the url out of the form:
-            var url = event.target.url.value.replace('http://', '');
+            var url = 'http://' + event.target.url.value.replace(/^https?:\/\//, '');
 
-            extractMeta('http://' + url, function (err, res) {
+            extractMeta(url, function (err, res) {
                 var title = event.target.title.value,
                     description = event.target.description.value || res.description || res.title;
 
@@ -122,6 +125,7 @@ if (Meteor.isClient) {
                     alertForm.style.display = 'block';
                 } else {
                     alertForm.style.display = 'none';
+                    console.log(url);
                     Websites.insert({
                         title: title,
                         url: url,
