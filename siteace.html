@@ -1,18 +1,19 @@
 <head>
-    <title>siteace</title>
+    <title>Siteace</title>
+
+    <!-- Materialize icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 
 <body>
 
 <nav>
-    <div class="nav-wrapper">
+    <div class="nav-wrapper teal darken-4">
         <a href="/" class="brand-logo">Site Ace</a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
             <li>{{> loginButtons}}</li>
             <li><a href="/sites">Sites</a></li>
-
         </ul>
-
     </div>
 </nav>
 
@@ -87,7 +88,21 @@
 
 <template name="topRated_item">
 
-    <div class="col-xs-6 col-md-4">
+
+    <div class="col s6 offset-s3">
+        <div class="card blue-grey darken-1">
+            <div class="card-content white-text">
+                <a href="{{url}}" class="card-title">{{title}}</a>
+                <p>{{{description}}}</p>
+            </div>
+            <div class="card-action">
+                <i class="material-icons">thumb_up</i>{{#if upvotes}} {{upvotes}} {{else}}
+                0 {{/if}}
+            </div>
+        </div>
+    </div>
+
+    <!-- <div class="col-xs-6 col-md-4">
         <div class="thumbnail" id="padded">
             <a href="{{url}}">
                 <p class="title">{{title}}</p>
@@ -95,10 +110,9 @@
             <p>
                 {{{description}}}
             </p>
-            <p class="upvotes"><span class="glyphicon glyphicon-thumbs-up"
-                                     aria-hidden="true"></span>{{#if upvotes}} {{upvotes}} {{else}} 0 {{/if}}</p>
+            <p class="upvotes"><i class="material-icons">thumb_up</i>{{#if upvotes}} {{upvotes}} {{else}} 0 {{/if}}</p>
         </div>
-    </div>
+    </div>-->
 
 </template>
 <!-- template that displays individual website entries -->
