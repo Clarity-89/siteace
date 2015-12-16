@@ -4,20 +4,25 @@
 
 <body>
 
-<nav class="navbar navbar-default">
-    <div class="container-fluid">
-        <div class="navbar-header">
-            <a class="navbar-brand" href="/">
-                Site Ace
-            </a>
-
-        </div>
-        <ul id="signup">
-            {{> loginButtons}}
+<nav>
+    <div class="nav-wrapper">
+        <a href="/" class="brand-logo">Site Ace</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li><a href="sass.html">Sass</a></li>
+            <li><a href="badges.html">Components</a></li>
+            <li><a href="collapsible.html">JavaScript</a></li>
         </ul>
-
     </div>
 </nav>
+
+<!-- Dropdown Trigger -->
+<a class='dropdown-button btn' href='#' data-activates='dropdown1'>Drop Me!</a>
+
+<!-- Dropdown Structure -->
+<ul id='dropdown1' class='dropdown-content'>
+    {{> atForm }}
+</ul>
+
 
 </body>
 
