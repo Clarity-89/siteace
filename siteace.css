@@ -19,14 +19,6 @@ ul {
     margin-bottom: 0;
 }
 
-.jumbotron {
-    background: url('https://c2.staticflickr.com/8/7213/6887025506_38362b2f59_b.jpg') no-repeat;
-    background-size: cover;
-    margin-bottom: 0;
-    text-align: center;
-    color: white;
-}
-
 #heading {
     text-align: center;
     margin-top: 30px;
@@ -100,5 +92,6 @@ ul {
 }
 
 .right {
-    margin-right: 10px;
+    margin-right: 15px;
 }
+

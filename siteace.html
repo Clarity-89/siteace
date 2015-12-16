@@ -20,13 +20,13 @@
 </body>
 
 <template name="home">
-    <div class="jumbotron">
+
         <div class="container">
             <h3>Welcome to Site Ace! Here you can submit your favourite programming websites or
-                to rate and discuss submissions of others.</h3>
-            <a class="waves-effect waves-light btn" href="/sites">See all websites</a>
+                rate and discuss submissions of others.</h3>
+            <a class="waves-effect waves-light btn center-block" href="/sites">See all websites</a>
         </div>
-    </div>
+
     <div class="container">
         <h3 id="heading">Top rated websites</h3>
 
@@ -112,7 +112,7 @@
             <p class="title">{{title}}</p>
         </a>
         <p>{{{description}}}</p>
-
+        <br>
         {{#if currentUser}}
             <a href="#" class="btn waves-effect waves-light js-upvote">
                 <i class="fa fa-arrow-up"></i>
@@ -121,7 +121,7 @@
                 <i class="fa fa-arrow-down"></i>
             </a>
         {{/if}}
-        <br>
+        <br><br>
         <i class="small material-icons">thumb_up</i><span class="votes">{{#if upvotes}} {{upvotes}} {{else}}
         0 {{/if}}</span>
 
