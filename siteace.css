@@ -1,4 +1,7 @@
-/* CSS declarations go here */
+body {
+    background-color: #607d8b;
+}
+
 .hidden_div {
     display: none;
 }
@@ -26,7 +29,7 @@ ul {
 #heading {
     text-align: center;
     margin-top: 30px;
-    margin-bottom: 30px;
+    /* margin-bottom: 30px;*/
 }
 
 .thumbnail {
@@ -80,4 +83,13 @@ ul {
 
 #signup {
     float: left;
+}
+
+#top-rated {
+    color: black;
+}
+
+/* Fix issue with offsetting by overriding default css */
+.row .col.m6 {
+    margin-left: 25%;
 }
