@@ -22,4 +22,4 @@ momentjs:moment
 iron:router
 acemtp:meta-extractor
 materialize:materialize
-useraccounts:materialize
+accounts-ui
