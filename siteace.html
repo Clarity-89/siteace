@@ -24,7 +24,7 @@
         <div class="container">
             <h3>Welcome to Site Ace! Here you can submit your favourite programming websites or
                 to rate and discuss submissions of others.</h3>
-            <a class="btn btn-default btn-lg" href="/sites">See all websites</a>
+            <a class="waves-effect waves-light btn" href="/sites">See all websites</a>
         </div>
     </div>
     <div class="container">
@@ -72,7 +72,7 @@
                        placeholder="I found this site really useful for ...">
             </div>
             <div class="alert alert-danger"></div>
-            <button type="submit" class="btn btn-default">Submit</button>
+            <button type="submit" class="waves-effect waves-light btn">Submit</button>
         </form>
     </div>
 </template>
@@ -106,24 +106,25 @@
 </template>
 <!-- template that displays individual website entries -->
 <template name="website_item">
+    <p class="right">Added on {{formatDate createdOn}}</p>
     <a href="/sites/{{_id}}" class="collection-item">
         <a href="{{url}}">
             <p class="title">{{title}}</p>
         </a>
         <p>{{{description}}}</p>
 
-        <i class="material-icons">thumb_up</i>{{#if upvotes}} {{upvotes}} {{else}} 0 {{/if}}
-
         {{#if currentUser}}
-            <a href="#" class="btn btn-default btn-sm js-upvote">
+            <a href="#" class="btn waves-effect waves-light js-upvote">
                 <i class="fa fa-arrow-up"></i>
             </a>
-
-            <a href="#" class="btn btn-default btn-sm js-downvote">
+            <a href="#" class="btn waves-effect waves-light js-downvote">
                 <i class="fa fa-arrow-down"></i>
             </a>
         {{/if}}
-        <p>Added on {{formatDate createdOn}}</p>
+        <br>
+        <i class="small material-icons">thumb_up</i><span class="votes">{{#if upvotes}} {{upvotes}} {{else}}
+        0 {{/if}}</span>
+
     </a>
 </template>
 <template name="site">

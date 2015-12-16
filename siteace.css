@@ -1,5 +1,6 @@
 body {
     background-color: #607d8b;
+    color: black;
 }
 
 .hidden_div {
@@ -92,4 +93,12 @@ ul {
 /* Fix issue with offsetting by overriding default css */
 .row .col.m6 {
     margin-left: 25%;
+}
+
+.votes {
+    font-size: 25px;
+}
+
+.right {
+    margin-right: 10px;
 }
