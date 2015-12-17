@@ -7,36 +7,32 @@
 
 <body>
 
-<nav>
-    <div class="nav-wrapper teal darken-4">
-        <a href="/" class="brand-logo">Site Ace</a>
-        <ul id="nav-mobile" class="right hide-on-med-and-down">
-            <li>{{> loginButtons}}</li>
-            <li><a href="/sites">Sites</a></li>
-        </ul>
-    </div>
-</nav>
+<div class="navbar-fixed">
+    <nav>
+        <div class="nav-wrapper dark-primary-color">
+            <a href="/" class="brand-logo" id="custom-brand">Site Ace</a>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li>{{> loginButtons}}</li>
+                <li><a href="/sites">Sites</a></li>
+            </ul>
+        </div>
+    </nav>
+</div>
 
 </body>
 
 <template name="home">
-
+    <div class="main default-primary-color">
         <div class="container">
-            <h3>Welcome to Site Ace! Here you can submit your favourite programming websites or
-                rate and discuss submissions of others.</h3>
-            <a class="waves-effect waves-light btn center-block" href="/sites">See all websites</a>
-        </div>
+            <div class="inner center">
+                <h4>Discover The Best Websites</h4>
 
-    <div class="container">
-        <h3 id="heading">Top rated websites</h3>
-
-        {{#each topRated}}
-            <div class="row">
-                {{>topRated_item}}
+                <a class="waves-effect waves-light btn orange darken-4" href="/sites">Browse websites</a>
             </div>
-        {{/each}}
-
+        </div>
     </div>
+
+
 </template>
 
 <template name="sites">
