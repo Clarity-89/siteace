@@ -49,10 +49,6 @@ ul {
     display: none;
 }
 
-.navbar {
-    margin-bottom: 0;
-}
-
 #heading {
     text-align: center;
     margin-top: 30px;
@@ -94,10 +90,6 @@ ul {
 
 #comment-text {
     font-size: 16px;
-}
-
-.list-group-item {
-    margin-top: 30px;
 }
 
 #user {
@@ -143,10 +135,34 @@ ul {
 }
 
 .inner {
-    margin-top: 15%;
+    margin-top: 30%;
 }
 
 /* Set the height to 0 to remove vertical overflow*/
 .navbar-fixed {
     height: 0;
+}
+
+h4, h6 {
+    font-weight: 300;
+}
+
+.promo-wrap {
+    z-index: 10;
+    position: relative;
+    max-width: 1104px;
+    padding-left: 0;
+    padding-right: 0;
+    width: 100%;
+    margin: 10% auto 30px;
+}
+
+.promo {
+    width: 100%;
+    min-height: 200px;
+    margin: auto;
+    padding: 20px 30px;
+    /*background: #fff;*/
+    box-shadow: 0 15px 12px 0 rgba(0, 0, 0, .04), 0 19px 38px 0 rgba(0, 0, 0, .12);
+    border-radius: 8px;
 }
