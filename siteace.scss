@@ -145,7 +145,7 @@ h4, h6 {
 
 .promo {
   width: 100%;
-  min-height: 200px;
+  min-height: 400px;
   margin: auto;
   padding: 20px 30px;
   box-shadow: 0 15px 12px 0 rgba(0, 0, 0, .04), 0 19px 38px 0 rgba(0, 0, 0, .12);
@@ -162,9 +162,9 @@ h4, h6 {
 }
 
 /*For debugging*/
-* {
+/** {
   outline: 2px solid orange;
-}
+}*/
 
 .promo-title {
   font-size: 26px;
@@ -176,3 +176,15 @@ h4, h6 {
   font-weight: 300;
 }
 
+#about {
+  width: 100%;
+  min-height: 100%;
+  padding-top: 64px;
+}
+
+#chevron-button {
+  margin-top: -150px;
+}
+.waves-effect.waves-light.btn, #chevron-button {
+  background-color: $accent-color;
+}
