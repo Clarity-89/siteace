@@ -10,7 +10,7 @@ $divider-color: #B6B6B6;
 html,
 body {
   height: 100%;
-  width: 100%;
+
 }
 
 .hidden_div {
@@ -97,13 +97,21 @@ ul {
   margin-right: 15px;
 }
 
+.main-outer {
+  background: url('http://necistudio.com/img/android-5-0-lollipop-green.jpg') center no-repeat;
+  background-size: cover;
+  height: 100%;
+  min-height: 100%;
+}
+
 .main {
   display: table;
   width: 100%;
-  height: 100%; /* For at least Firefox */
+  height: 100%;
   min-height: 100%;
   color: white;
-  background: rgba(76, 175, 80, 0.82);;
+  background: rgba(76, 175, 80, 0.82);
+  z-index: 999;
 }
 
 /*Add more margin to brand*/
@@ -115,10 +123,11 @@ ul {
   margin-top: 25%;
 }
 
-/* Set the height to 0 to remove vertical overflow*/
-/*.navbar-fixed {
-    height: 0;
-}*/
+/* Set the position to fixed remove vertical overflow*/
+.navbar-fixed {
+  position: fixed;
+  top: 0;
+}
 
 h4, h6 {
   font-weight: 300;
@@ -153,9 +162,9 @@ h4, h6 {
 }
 
 /*For debugging*/
-/** {
+* {
   outline: 2px solid orange;
-}*/
+}
 
 .promo-title {
   font-size: 26px;
@@ -167,8 +176,3 @@ h4, h6 {
   font-weight: 300;
 }
 
-.main-outer {
-  background: url('http://necistudio.com/img/android-5-0-lollipop-green.jpg') center no-repeat;
-  background-size: cover;
-
-}
