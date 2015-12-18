@@ -57,6 +57,12 @@ if (Meteor.isClient) {
     Template.registerHelper('formatDate', function (date) {
         return moment(date).format('DD-MM-YYYY');
     });
+
+    // Initialize materialize plugins
+    Template.home.onRendered(function () {
+        $('.scrollspy').scrollSpy({offset: 64});
+    });
+
     /////
     // template events
     /////
@@ -173,6 +179,7 @@ if (Meteor.isClient) {
             });
         }
     });
+
 }
 
 if (Meteor.isServer) {
