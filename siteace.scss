@@ -103,7 +103,7 @@ ul {
   height: 100%; /* For at least Firefox */
   min-height: 100%;
   color: white;
-  background: $primary-color;
+  background: rgba(76, 175, 80, 0.82);;
 }
 
 /*Add more margin to brand*/
@@ -112,7 +112,7 @@ ul {
 }
 
 .inner {
-  margin-top: 30%;
+  margin-top: 25%;
 }
 
 /* Set the height to 0 to remove vertical overflow*/
@@ -160,4 +160,15 @@ h4, h6 {
 .promo-title {
   font-size: 26px;
   color: $primary-text-color;
+}
+
+.promo-text {
+  color: $secondary-text-color;
+  font-weight: 300;
+}
+
+.main-outer {
+  background: url('http://necistudio.com/img/android-5-0-lollipop-green.jpg') center no-repeat;
+  background-size: cover;
+
 }
