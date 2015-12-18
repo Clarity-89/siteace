@@ -183,8 +183,13 @@ h4, h6 {
 }
 
 #chevron-button {
-  margin-top: -150px;
+  margin-top: -10%;
 }
+
 .waves-effect.waves-light.btn, #chevron-button {
   background-color: $accent-color;
+}
+
+.waves-effect.waves-light.btn {
+  margin-top: 20px;
 }
