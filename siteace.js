@@ -60,7 +60,14 @@ if (Meteor.isClient) {
 
     // Initialize materialize plugins
     Template.home.onRendered(function () {
-        $('.scrollspy').scrollSpy({offset: 64});
+        // Scroll to the el in href
+        $('.scrollspy').bind('click', function (event) {
+            var $anchor = $(this);
+            $('html, body').stop().animate({
+                scrollTop: $($anchor.attr('href')).offset().top
+            }, 1500, 'easeInOutExpo');
+            event.preventDefault();
+        });
     });
 
     /////
