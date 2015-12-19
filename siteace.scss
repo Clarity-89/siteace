@@ -191,6 +191,7 @@ h4, h6 {
   width: 100%;
   min-height: 100%;
   padding-top: 64px;
+  margin-bottom: -80px; /*height of the footer*/
 }
 
 #chevron-button {
@@ -207,11 +208,8 @@ h4, h6 {
 
 footer {
   position: relative;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  padding: 1rem;
-  height: 100px;
+  padding: 5px;
+  height: 80px;
   width: 100%;
   text-align: center;
   color: $primary-color-text;
