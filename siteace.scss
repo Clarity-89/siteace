@@ -7,10 +7,17 @@ $accent-color: #FF5722;
 $primary-text-color: #212121;
 $secondary-text-color: #727272;
 $divider-color: #B6B6B6;
+
+/*Mixins*/
+@mixin header-text($text-color: $primary-text-color, $font: 26px) {
+  font-size: $font;
+  color: $text-color;
+}
+
+
 html,
 body {
   height: 100%;
-
 }
 
 .hidden_div {
@@ -140,7 +147,7 @@ h4, h6 {
   padding-left: 0;
   padding-right: 0;
   width: 100%;
-  margin: 10% auto 30px;
+  margin: 7% auto 30px;
 }
 
 .promo {
@@ -166,14 +173,19 @@ h4, h6 {
   outline: 2px solid orange;
 }*/
 
+.promo-header {
+  @include header-text($primary-text-color, 38px);
+  font-weight: 300;
+}
+
 .promo-title {
-  font-size: 26px;
-  color: $primary-text-color;
+@include header-text();
 }
 
 .promo-text {
   color: $secondary-text-color;
   font-weight: 300;
+  margin-bottom: 50px;
 }
 
 #about {
