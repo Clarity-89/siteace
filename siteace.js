@@ -15,7 +15,9 @@ if (Meteor.isClient) {
 
     //routes
     Router.route('/', function () {
+        this.layout('HomeLayout');
         this.render('Home');
+        this.render('footer', {to: 'footer'});
     });
 
     Router.route('/sites', function () {
