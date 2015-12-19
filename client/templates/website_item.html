@@ -1,0 +1,23 @@
+<!-- template that displays individual website entries -->
+<template name="website_item">
+    <p class="right">Added on {{formatDate createdOn}}</p>
+    <a href="/sites/{{_id}}" class="collection-item">
+        <a href="{{url}}">
+            <p class="title">{{title}}</p>
+        </a>
+        <p>{{{description}}}</p>
+        <br>
+        {{#if currentUser}}
+            <a href="#" class="btn waves-effect waves-light js-upvote">
+                <i class="fa fa-arrow-up"></i>
+            </a>
+            <a href="#" class="btn waves-effect waves-light js-downvote">
+                <i class="fa fa-arrow-down"></i>
+            </a>
+        {{/if}}
+        <br><br>
+        <i class="small material-icons">thumb_up</i><span class="votes">{{#if upvotes}} {{upvotes}} {{else}}
+        0 {{/if}}</span>
+
+    </a>
+</template>

@@ -1,0 +1,33 @@
+<head>
+    <title>Siteace</title>
+
+    <!-- Materialize icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<body>
+
+
+</body>
+
+<!-- template that displays several website items -->
+
+<template name="topRated_item">
+
+    <div class="col s12 m6 offset-m3">
+        <div class="card hoverable">
+            <div class="card-content white-text">
+                <a href="{{url}}" class="card-title">{{title}}</a>
+                <p id="top-rated">{{{description}}}</p>
+            </div>
+            <div class="card-action">
+                <i class="material-icons">thumb_up</i>
+                {{#if upvotes}} {{upvotes}} {{else}} 0 {{/if}}
+            </div>
+        </div>
+    </div>
+
+</template>
+
+
+
