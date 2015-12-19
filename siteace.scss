@@ -214,4 +214,18 @@ footer {
   height: 100px;
   width: 100%;
   text-align: center;
+  color: $primary-color-text;
+  font-weight: 300;
+}
+
+.btn-custom {
+  background: white;
+  color: $accent-color;
+  border: solid 1px $accent-color;
+  margin-top: 30px;
+}
+
+.btn-custom:hover {
+  background: $accent-color;
+  color: white;
 }
