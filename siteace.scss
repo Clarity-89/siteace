@@ -14,7 +14,6 @@ $divider-color: #B6B6B6;
   color: $text-color;
 }
 
-
 html,
 body {
   height: 100%;
@@ -147,7 +146,7 @@ h4, h6 {
   padding-left: 0;
   padding-right: 0;
   width: 100%;
-  margin: 7% auto 30px;
+  margin: 5% auto 30px;
 }
 
 .promo {
@@ -179,7 +178,7 @@ h4, h6 {
 }
 
 .promo-title {
-@include header-text();
+  @include header-text();
 }
 
 .promo-text {
@@ -190,7 +189,7 @@ h4, h6 {
 
 #about {
   width: 100%;
-  min-height: 100%;
+  min-height: 90%;
   padding-top: 64px;
 }
 
@@ -204,4 +203,15 @@ h4, h6 {
 
 .waves-effect.waves-light.btn {
   margin-top: 20px;
+}
+
+footer {
+  position: relative;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  height: 100px;
+  width: 100%;
+  text-align: center;
 }
