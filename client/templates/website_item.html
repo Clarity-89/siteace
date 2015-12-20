@@ -1,32 +1,24 @@
 <!-- template that displays individual website entries -->
 <template name="website_item">
-           <div class="row">
-            <div class="col s12 m6 offset-m3">
-                <div class="card large">
-                    <div class="card-image">
-                        <img src="http://www.thinkstockphotos.com/CMS/StaticContent/Hero/TS_AnonHP_462882495_01.jpg">
-                        <a href="{{url}}"><span class="card-title">{{title}}</span></a>
-                    </div>
-                    <div class="card-content">
-                        <p>{{{description}}}</p>
-                    </div>
-                    <div class="card-action">
-                        {{#if currentUser}}
-                            <a href="#" class="btn waves-effect waves-light js-upvote">
-                                <i class="fa fa-arrow-up"></i>
-                            </a>
-                            <a href="#" class="btn waves-effect waves-light js-downvote">
-                                <i class="fa fa-arrow-down"></i>
-                            </a>
-                        {{/if}}
-                        <br><br>
-                        <i class="btn-floating waves-effect waves-light js-upvote material-icons">grade</i><span
-                            class="votes">{{#if upvotes}} {{upvotes}} {{else}}
-                        0 {{/if}}</span>
-                    </div>
+    <div class="row">
+        <div class="col s12 m6 offset-m3">
+            <div class="card large">
+                <div class="card-image">
+                    <img src="http://www.thinkstockphotos.com/CMS/StaticContent/Hero/TS_AnonHP_462882495_01.jpg">
+                    <a href="{{url}}"><span class="card-title">{{title}}</span></a>
+                </div>
+                <div class="card-content">
+                    <p>{{{description}}}</p>
+                </div>
+                <div class="card-action valign-wrapper">
+                    <a class="valign btn-floating waves-effect waves-light btn js-upvote"><i
+                            class="material-icons">grade</i></a>
+                        <span class="votes valign">{{#if upvotes}} {{upvotes}} {{else}}
+                            0 {{/if}}</span>
                 </div>
             </div>
         </div>
+    </div>
 
 </template>
 

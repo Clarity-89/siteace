@@ -4,20 +4,23 @@
 
 Template.website_item.events({
     "click .js-upvote": function (event) {
+        if (Meteor.user()) {
+            var website_id = this._id;
+            var user = Meteor.userId();
+            var hasUpvoted = Websites.find({_id: website_id, upvotedBy: user}).count();
 
-        var website_id = this._id;
-        var user = Meteor.userId();
-        var hasUpvoted = Websites.find({_id: website_id, upvotedBy: user}).count();
-
-        // make sure a user hasn't voted before
-        if (!hasUpvoted) {
-            Websites.update({_id: website_id}, {
-                $push: {upvotedBy: user},
-                $pull: {downvotedBy: user},
-                $inc: {upvotes: 1}
-            });
+            // make sure a user hasn't voted before
+            if (!hasUpvoted) {
+                Websites.update({_id: website_id}, {
+                    $push: {upvotedBy: user},
+                    $pull: {downvotedBy: user},
+                    $inc: {upvotes: 1}
+                });
+            }
+            return false; // prevent the button from reloading the page
+        } else {
+            console.log('login to be able to upvote');
         }
-        return false; // prevent the button from reloading the page
     },
 
     "click .js-downvote": function (event) {
