@@ -232,3 +232,20 @@ footer {
   min-height: 500px;
 }
 
+#table {
+  display: table;
+}
+
+#left-cell {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+#right-cell {
+  display: table-cell;
+  vertical-align: middle;
+  text-align: right;
+}
+#btn-custom-margin{
+  margin: 0;
+}

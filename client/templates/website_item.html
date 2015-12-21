@@ -10,11 +10,15 @@
                 <div class="card-content">
                     <p>{{{description}}}</p>
                 </div>
-                <div class="card-action valign-wrapper">
-                    <a class="valign btn-floating waves-effect waves-light btn js-upvote"><i
-                            class="material-icons">grade</i></a>
-                        <span class="votes valign">{{#if upvotes}} {{upvotes}} {{else}}
+                <div class="card-action" id="table">
+                    <div id="left-cell">
+                        <a class="btn-floating waves-effect waves-light btn js-upvote" id="btn-custom-margin"><i
+                                class="material-icons">grade</i></a>
+                    </div>
+                    <div id="right-cell">
+                        <span class="votes">{{#if upvotes}} {{upvotes}} {{else}}
                             0 {{/if}}</span>
+                    </div>
                 </div>
             </div>
         </div>
