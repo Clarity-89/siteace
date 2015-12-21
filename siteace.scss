@@ -50,9 +50,11 @@ ul {
   margin-top: 3%;
 }
 
-.upvotes {
-  margin-right: 20px;
-  font-size: 18px;
+.votes {
+  margin-left: 10px;
+  font-size: 22px;
+  font-weight: 500;
+  color: $accent-color;
 }
 
 .comments {
@@ -228,9 +230,9 @@ footer {
   color: white;
 }
 
-.card.large .card-content {
-  min-height: 500px;
-}
+/*.card.large .card-content {
+  min-height: 300px;
+}*/
 
 #table {
   display: table;
