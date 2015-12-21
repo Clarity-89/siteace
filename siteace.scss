@@ -84,11 +84,6 @@ ul {
   color: black;
 }
 
-/* Fix issue with offsetting by overriding default css */
-/*.row .col.m6 {
-  margin-left: 25%;
-}*/
-
 .votes {
   font-size: 25px;
 }
@@ -248,12 +243,11 @@ footer {
 .main-wrapper {
   min-height: 100%;
   padding: 64px 0;
+  background: $primary-color;
+  margin-bottom: -80px; /*height of the footer*/
 }
 
 #list {
   width:100%;
   background: $primary-color;
-}
-.container-fluid {
-
 }
