@@ -1,10 +1,17 @@
 <template name="site">
     <div class="main-wrapper">
-        <div class="container">
+        <div class="container custom-back">
             <h2>{{title}}</h2>
             <p>{{description}}</p>
-            <p class="upvotes"><span class="glyphicon glyphicon-thumbs-up"
-                                     aria-hidden="true"></span>{{#if upvotes}} {{upvotes}} {{else}} 0 {{/if}}</p>
+            <div class="valign-wrapper">
+                <a class="btn-floating waves-effect waves-light btn js-upvote valign"
+                                           id="btn-custom-margin"><i
+                    class="material-icons">thumb_up</i></a>
+
+
+                        <span class="votes valign">{{#if upvotes}} {{upvotes}} {{else}}
+                            0 {{/if}}</span>
+            </div>
 
             <div class="comments">
                 <h3>Comments</h3>

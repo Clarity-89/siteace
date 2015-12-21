@@ -247,7 +247,7 @@ footer {
   margin-bottom: -80px; /*height of the footer*/
 }
 
-#list {
-  width:100%;
-  background: $primary-color;
+.custom-back {
+  background: $primary-color-light;
+  padding: 20px;
 }
