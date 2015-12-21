@@ -46,10 +46,6 @@ ul {
   font-size: 18px;
 }
 
-#list {
-  margin-top: 3%;
-}
-
 .votes {
   margin-left: 10px;
   font-size: 22px;
@@ -60,10 +56,6 @@ ul {
 .comments {
   margin: 3% auto 3% auto;
 }
-
-/*.container {
-    margin-top: 3%;
-}*/
 
 #date {
   float: right;
@@ -93,9 +85,9 @@ ul {
 }
 
 /* Fix issue with offsetting by overriding default css */
-.row .col.m6 {
+/*.row .col.m6 {
   margin-left: 25%;
-}
+}*/
 
 .votes {
   font-size: 25px;
@@ -230,9 +222,9 @@ footer {
   color: white;
 }
 
-/*.card.large .card-content {
-  min-height: 300px;
-}*/
+.card.large {
+  background: $primary-color-light;
+}
 
 #table {
   display: table;
@@ -248,6 +240,20 @@ footer {
   vertical-align: middle;
   text-align: right;
 }
-#btn-custom-margin{
+
+#btn-custom-margin {
   margin: 0;
+}
+
+.main-wrapper {
+  min-height: 100%;
+  padding: 64px 0;
+}
+
+#list {
+  width:100%;
+  background: $primary-color;
+}
+.container-fluid {
+
 }

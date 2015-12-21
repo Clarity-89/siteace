@@ -21,7 +21,6 @@ accounts-password
 momentjs:moment
 iron:router
 acemtp:meta-extractor
-materialize:materialize
 accounts-ui
 fortawesome:fontawesome
 fourseven:scss

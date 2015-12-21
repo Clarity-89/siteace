@@ -1,10 +1,15 @@
 <template name="sites">
-    <div class="container" id="list">
-        {{#unless currentUser}}
-            <h3 class="heading">Sign in or Log in to be able to submit, rate and discuss websites.</h3>
-        {{/unless}}
+    <div class="main-wrapper">
+        <div class="container">
 
-        {{> website_form}}
-        {{> website_list}}
+            {{#unless currentUser}}
+                <h3 class="heading">Sign in or Log in to be able to submit, rate and discuss websites.</h3>
+            {{/unless}}
+
+            {{> website_form}}
+            <div class="row">
+                {{> website_list}}
+            </div>
+        </div>
     </div>
 </template>

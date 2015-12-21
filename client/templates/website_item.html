@@ -1,8 +1,8 @@
 <!-- template that displays individual website entries -->
 <template name="website_item">
-    <div class="row">
-        <div class="col s12 m6 offset-m3">
-            <div class="card large">
+
+        <div class="col s12 m6 offset-m3 offset-l2 l8">
+            <div class="card large hoverable">
                 <div class="card-image">
                     <img src="http://www.thinkstockphotos.com/CMS/StaticContent/Hero/TS_AnonHP_462882495_01.jpg">
                     <a href="{{url}}"><span class="card-title">{{title}}</span></a>
@@ -16,13 +16,13 @@
                                 class="material-icons">thumb_up</i></a>
 
 
-                        <span class="votes valign">{{#if upvotes}} {{upvotes}} {{else}}
+                        <span class="votes va">{{#if upvotes}} {{upvotes}} {{else}}
                             0 {{/if}}</span>
 
                 </div>
             </div>
         </div>
-    </div>
+
 
 </template>
 

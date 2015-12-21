@@ -1,5 +1,7 @@
-
-
+Meteor.startup(function () {
+    // Include materialize.css file before Meteor's combined css to allow it being overridden
+    $('head').prepend('<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.4/css/materialize.min.css">');
+});
 
 
 // Add username field to sign up form
