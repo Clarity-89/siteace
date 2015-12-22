@@ -217,9 +217,9 @@ footer {
   color: white;
 }
 
-.card.large {
+/*.card.large {
   background: $primary-color-light;
-}
+}*/
 
 #table {
   display: table;
@@ -243,12 +243,29 @@ footer {
 .main-wrapper {
   min-height: 100%;
   padding: 64px 0;
-  background: $primary-color;
+  /*background: url('http://www.tagproleague.com/assets/img/green.png') no-repeat fixed;*/
+  background: url("http://i.imgur.com/oFI1Hyk.jpg") center no-repeat fixed;
+  background-size: cover;
   margin-bottom: -80px; /*height of the footer*/
 }
 
 .custom-back {
-  background: $primary-color-light;
+  background: white;
   padding: 20px;
   margin: 30px auto 30px;
+}
+
+.card-content {
+  background: $primary-color;
+  min-height: 200px;
+  color: white;
+}
+
+.card .card-title {
+  font-size: 28px;
+  font-weight: 500;
+}
+
+.card-action {
+  background-color: $primary-color-light;
 }

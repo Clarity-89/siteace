@@ -1,46 +1,27 @@
 <!-- template that displays individual website entries -->
 <template name="website_item">
 
-        <div class="col s12 m6 offset-m3 offset-l2 l8">
-            <div class="card large hoverable">
-                <div class="card-image">
+    <div class="col s12 m6 offset-m3">
+        <div class="card hoverable">
+            <!--<div class="card-image">
                     <a href="/sites/{{_id}}"><img src="http://www.thinkstockphotos.com/CMS/StaticContent/Hero/TS_AnonHP_462882495_01.jpg"></a>
                     <a href="{{url}}"><span class="card-title">{{title}}</span></a>
-                </div>
-                <div class="card-content">
-                    <p>{{{description}}}</p>
-                </div>
-                <div class="card-action valign-wrapper">
+                </div>-->
+            <div class="card-content">
+                <span class="card-title">{{title}}</span>
+                <div class="divider"></div>
+                <br>
+                <p>{{{description}}}</p>
+            </div>
+            <div class="card-action valign-wrapper">
 
-                        <a class="btn-floating waves-effect waves-light btn js-upvote valign" id="btn-custom-margin"><i
-                                class="material-icons">thumb_up</i></a>
-
+                <a class="btn-floating waves-effect waves-light btn js-upvote valign" id="btn-custom-margin"><i
+                        class="material-icons">thumb_up</i></a>
 
                         <span class="votes valign">{{#if upvotes}} {{upvotes}} {{else}}
                             0 {{/if}}</span>
 
-                </div>
             </div>
         </div>
+    </div>
 </template>
-
-<!--<p class="right">Added on {{formatDate createdOn}}</p>
-<a href="/sites/{{_id}}" class="collection-item">
-    <a href="{{url}}">
-        <p class="title">{{title}}</p>
-    </a>
-    <p>{{{description}}}</p>
-    <br>
-    {{#if currentUser}}
-        <a href="#" class="btn waves-effect waves-light js-upvote">
-            <i class="fa fa-arrow-up"></i>
-        </a>
-        <a href="#" class="btn waves-effect waves-light js-downvote">
-            <i class="fa fa-arrow-down"></i>
-        </a>
-    {{/if}}
-    <br><br>
-    <i class="small material-icons">thumb_up</i><span class="votes">{{#if upvotes}} {{upvotes}} {{else}}
-    0 {{/if}}</span>
-
-</a>-->

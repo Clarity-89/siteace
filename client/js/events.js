@@ -1,6 +1,4 @@
-/////
 // template events
-/////
 
 Template.website_item.events({
     "click .js-upvote": function (event) {
