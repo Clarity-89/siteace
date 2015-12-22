@@ -1,6 +1,7 @@
 
 // start up function that creates entries in the Websites databases.
 Meteor.startup(function () {
+
     // code to run on server at startup
     if (!Websites.findOne()) {
 

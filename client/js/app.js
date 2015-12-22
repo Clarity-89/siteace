@@ -3,6 +3,7 @@ Meteor.startup(function () {
     $('head').prepend('<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.4/css/materialize.min.css">');
 });
 
+Meteor.subscribe("websites");
 
 // Add username field to sign up form
 Accounts.ui.config({

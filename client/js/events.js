@@ -68,15 +68,19 @@ Template.website_form.events({
             } else {
                 alertForm.style.display = 'none';
                 console.log(url);
-                Websites.insert({
+                var site = {
                     title: title,
                     url: url,
                     description: description,
                     createdOn: new Date()
-                });
+                };
+                Meteor.call('addSite', site);
+                $("#website_form").toggle('slow');
+                // Clear the form
+                event.target.url.value = '';
+                event.target.title.value = '';
+                event.target.description.value = '';
             }
-            $("#website_form").toggle('slow');
-
         });
         return false; // stop the form submit from reloading the page
     },

@@ -244,7 +244,7 @@ footer {
   min-height: 100%;
   padding: 64px 0;
   /*background: url('http://www.tagproleague.com/assets/img/green.png') no-repeat fixed;*/
-  background: url("http://i.imgur.com/oFI1Hyk.jpg") center no-repeat fixed;
+  background: url("/sites.jpg") center no-repeat fixed;
   background-size: cover;
   margin-bottom: -80px; /*height of the footer*/
 }
@@ -271,5 +271,5 @@ footer {
 }
 
 #website_form {
-  background-color: white;
+  background-color: $primary-color-light;
 }
