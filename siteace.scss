@@ -270,6 +270,13 @@ footer {
   background-color: $primary-color-light;
 }
 
-#website_form {
+/*#website_form {
   background-color: $primary-color-light;
+}*/
+
+#url.error + label:after, #title.error + label:after {
+  content: attr(data-error);
+  color: #F44336;
+  opacity: 1;
+  min-width: 200px;
 }

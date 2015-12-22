@@ -28,43 +28,42 @@ Template.website_form.events({
     "click .js-toggle-website-form": function (event) {
         $("#website_form").toggle('slow');
     },
-    "submit .js-save-website-form": function (event) {
+    "submit .js-form": function (event) {
+        event.preventDefault();
+        var $url = $('#url'), $title = $('#title');
+        if (!event.target.url.value) {
+            console.log('url');
+            $url.addClass('error');
+            return false;
+        } else {
+            var url = 'http://' + event.target.url.value.replace(/^https?:\/\//, '');
+            extractMeta(url, function (err, res) {
+                var title = event.target.title.value,
+                    description = event.target.description.value || res.description || res.title;
 
-        // here is an example of how to get the url out of the form:
-        var url = 'http://' + event.target.url.value.replace(/^https?:\/\//, '');
-
-        extractMeta(url, function (err, res) {
-            var title = event.target.title.value,
-                description = event.target.description.value || res.description || res.title;
-
-            var alertForm = document.getElementsByClassName('alert')[0];
-
-            // Make url and title fields mandatory
-            if (!url) {
-                alertForm.innerHTML = "You didn't enter the url!";
-                alertForm.style.display = 'block';
-                return false;
-            } else if (!title) {
-                alertForm.innerHTML = "You didn't enter the title!";
-                alertForm.style.display = 'block';
-            } else {
-                alertForm.style.display = 'none';
-                console.log(url);
-                var site = {
-                    title: title,
-                    url: url,
-                    description: description,
-                    createdOn: new Date()
-                };
-                Meteor.call('addSite', site);
-                $("#website_form").toggle('slow');
-                // Clear the form
-                event.target.url.value = '';
-                event.target.title.value = '';
-                event.target.description.value = '';
-            }
-        });
-        return false; // stop the form submit from reloading the page
+                // Make title field mandatory
+                if (!title) {
+                    $url.removeClass('error');
+                    $title.addClass('error');
+                    return false;
+                } else {
+                    $title.removeClass('error');
+                    var site = {
+                        title: title,
+                        url: url,
+                        description: description,
+                        createdOn: new Date()
+                    };
+                    Meteor.call('addSite', site);
+                    $("#website_form").toggle('slow');
+                    // Clear the form
+                    event.target.url.value = '';
+                    event.target.title.value = '';
+                    event.target.description.value = '';
+                }
+            });
+            return false; // stop the form submit from reloading the page
+        }
     },
 
     // Fill title and description fields on focus
