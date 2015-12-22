@@ -22,5 +22,10 @@ Template.home.onRendered(function () {
     });
 });
 
+Template.website_form.onRendered(function () {
+    // Initialize tooltip
+    $('.tooltipped').tooltip({delay: 50});
+});
+
 
 

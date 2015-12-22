@@ -1,7 +1,8 @@
 <template name="website_form">
     {{#if currentUser}}
-        <a class="btn btn-default js-toggle-website-form" href="#">
-            Add new site
+        <a class="btn-floating btn-large waves-effect waves-light btn tooltipped js-toggle-website-form"
+           data-position="right" data-delay="50" data-tooltip="Add a new site" href="#">
+            <i class="material-icons">add</i>
         </a>
     {{/if}}
     <div id="website_form" class="hidden_div">
