@@ -21,14 +21,27 @@ Template.website_item.events({
     "click a": function (event) {
         event.stopPropagation();
     },
+
     "click .comment-placeholder": function (event) {
         // Change comment text area to be editable
         var el = event.target;
         el.style.height = "4em";
-        el.innerHTML = '';
+        // el.innerHTML = '';
         el.setAttribute("contentEditable", 'true');
         el.style.color = '#212121';
         el.style.overflow = 'auto';
+    },
+
+    "click .js-add-comment": function (event) {
+        var $textarea = $('textarea#comment');
+        var comment = {
+            id: this._id,
+            text: $textarea.val(),
+            username: Meteor.user() ? Meteor.user().username : 'Anonymous'
+        };
+        console.log(comment);
+        Meteor.call('addComment', comment);
+        $textarea.val('');
     }
 });
 

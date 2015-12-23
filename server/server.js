@@ -12,5 +12,18 @@ Meteor.methods({
             $push: {upvotedBy: sites.upvotedBy},
             $inc: {upvotes: 1}
         });
+    },
+
+    addComment: function (comment) {
+        console.log('received comment', comment);
+        Websites.update({_id: comment.id}, {
+            $addToSet: {
+                comments: {
+                    text: comment.text,
+                    date: Date.now(),
+                    user: comment.username
+                }
+            }
+        });
     }
 });
