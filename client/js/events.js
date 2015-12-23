@@ -20,9 +20,17 @@ Template.website_item.events({
 
     "click a": function (event) {
         event.stopPropagation();
+    },
+    "click .comment-placeholder": function (event) {
+        // Change comment text area to be editable
+        var el = event.target;
+        el.style.height = "4em";
+        el.innerHTML = '';
+        el.setAttribute("contentEditable", 'true');
+        el.style.color = '#212121';
+        el.style.overflow = 'auto';
     }
-})
-;
+});
 
 Template.website_form.events({
     "click .js-toggle-website-form": function (event) {

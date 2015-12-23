@@ -296,3 +296,23 @@ footer {
 a {
   color: $primary-text-color;
 }
+
+.comment-placeholder-wrapper {
+  margin: 0 20px 0 20px;
+  padding: 20px 0 20px 0;
+  background-color: #f5f5f5;
+}
+
+.comment-placeholder {
+  box-sizing: border-box;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  color: #999;
+  cursor: text;
+  font-size: 12px;
+  height: 2.4em;
+  margin: 0 0 0 0;
+  padding: 6px 8px;
+  transition: all .2s;
+}
+
