@@ -305,6 +305,9 @@ a {
   .btn {
     background-color: $accent-color;
     margin-top: 5px;
+    padding: 0 3px;
+    font-size: 14px;
+    display: none;
   }
 }
 

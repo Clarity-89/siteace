@@ -25,11 +25,13 @@ Template.website_item.events({
     "click .comment-placeholder": function (event) {
         // Change comment text area to be editable
         var el = event.target;
+        var sibling = el.nextElementSibling;
         el.style.height = "4em";
-        // el.innerHTML = '';
         el.setAttribute("contentEditable", 'true');
+        el.setAttribute("placeholder", '');
         el.style.color = '#212121';
         el.style.overflow = 'auto';
+        sibling.style.display = 'block';
     },
 
     "submit .js-add-comment": function (event) {
