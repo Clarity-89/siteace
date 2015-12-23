@@ -5,28 +5,30 @@
             <i class="material-icons">add</i>
         </a>
     {{/if}}
-    <div id="website_form" class="row hidden_div">
-        <form class="js-form col s12 m6">
-            <div class="row">
-                <div class="input-field col s12 m6">
-                    <input type="text" id="url">
-                    <label for="url" data-error="Please provide the site's url">Site address</label>
+    <div class="form-wrapper">
+        <div id="website_form" class="row hidden_div">
+            <form class="js-form col s12 m6 offset-m3">
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input type="text" id="url">
+                        <label for="url" data-error="Please provide the site's url">Site address</label>
+                    </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="input-field col s12 m6">
-                    <input type="text" id="title">
-                    <label for="title" data-error="Enter the site's title">Title</label>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input type="text" id="title">
+                        <label for="title" data-error="Enter the site's title">Title</label>
+                    </div>
                 </div>
-            </div>
-            <div class="row">
-                <div class="input-field col s12 m6">
-                    <input type="text" id="description">
-                    <label for="description">Description</label>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input type="text" id="description">
+                        <label for="description">Description</label>
+                    </div>
                 </div>
-            </div>
-            <button type="submit" class="waves-effect waves-light btn">Submit</button>
-        </form>
+                <button type="submit" class="waves-effect waves-light btn">Submit</button>
+            </form>
+        </div>
     </div>
 </template>
 
