@@ -32,16 +32,17 @@ Template.website_item.events({
         el.style.overflow = 'auto';
     },
 
-    "click .js-add-comment": function (event) {
-        var $textarea = $('textarea#comment');
+    "submit .js-add-comment": function (event) {
+        event.preventDefault();
+        var textarea = event.target.childNodes[1]; // The second child node is textarea
         var comment = {
             id: this._id,
-            text: $textarea.val(),
+            text: textarea.value,
             username: Meteor.user() ? Meteor.user().username : 'Anonymous'
         };
-        console.log(comment);
+
         Meteor.call('addComment', comment);
-        $textarea.val('');
+        textarea.value = '';
     }
 });
 
@@ -83,7 +84,6 @@ Template.website_form.events({
                     event.target.description.value = '';
                 }
             });
-            return false; // stop the form submit from reloading the page
         }
     },
 

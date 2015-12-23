@@ -15,15 +15,20 @@ Meteor.methods({
     },
 
     addComment: function (comment) {
-        console.log('received comment', comment);
-        Websites.update({_id: comment.id}, {
-            $addToSet: {
-                comments: {
-                    text: comment.text,
-                    date: Date.now(),
-                    user: comment.username
+
+        if (comment.text) {
+            Websites.update({_id: comment.id}, {
+                $addToSet: {
+                    comments: {
+                        text: comment.text,
+                        date: Date.now(),
+                        user: comment.username
+                    }
                 }
-            }
-        });
+            });
+        } else {
+            console.log('cant add empty comment', comment.text);
+        }
+
     }
 });

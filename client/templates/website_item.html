@@ -41,8 +41,10 @@
                 <!--<div class="comment-placeholder" id="comment" tabindex="1" contentEditable="false">
                     Add a comment...
                 </div>-->
-                <textarea class="comment-placeholder" id='comment' placeholder="Add a comment..."></textarea>
-                <a class="waves-effect waves-teal btn js-add-comment">Post comment</a>
+                <form class="js-add-comment">
+                    <textarea class="comment-placeholder" id="{{_id}}" placeholder="Add a comment..."></textarea>
+                    <button type="submit" class="waves-effect waves-teal btn">Post comment</button>
+                </form>
             </div>
         </div>
     </div>
