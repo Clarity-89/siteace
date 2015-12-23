@@ -26,11 +26,10 @@
             <div class="divider"></div>
             <div class="comment-placeholder-wrapper">
                 {{#if comments}}
-                    <ul class="list-group">
+                    <ul>
                         {{#each comments}}
-                            <li class="list-group-item">
-                                <p id="date">{{this.date}}</p>
-                                <p id="user">{{this.user}}</p>
+                            <li>
+                                <p id="user">{{this.user}} <span id="date">{{formatDate this.date}}</span></p>
                                 <p id="comment-text">{{this.text}}</p>
                             </li>
                         {{/each}}

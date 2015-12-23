@@ -19,6 +19,10 @@ body {
   height: 100%;
 }
 
+* {
+  margin: 0;
+}
+
 .hidden_div {
   display: none;
 }
@@ -58,18 +62,20 @@ ul {
 }
 
 #date {
-  float: right;
-  font-size: 10px;
-  font-weight: 800;
-  margin-top: 1px;
+  font-weight: 300;
+  font-size: 13px;
+  color: $secondary-text-color;
+  margin-left: 5px;
 }
 
 #comment-text {
-  font-size: 16px;
+  font-size: 13px;
 }
 
 #user {
-  font-weight: 800;
+  margin-top: 5px;
+  font-weight: 600;
+  font-size: 13px;
 }
 
 #padded {
@@ -217,10 +223,6 @@ footer {
   color: white;
 }
 
-/*.card.large {
-  background: $primary-color-light;
-}*/
-
 #table {
   display: table;
 }
@@ -270,10 +272,6 @@ footer {
   background-color: white;
 }
 
-/*#website_form {
-  background-color: $primary-color-light;
-}*/
-
 #url.error + label:after, #title.error + label:after {
   content: attr(data-error);
   color: #F44336;
@@ -308,6 +306,7 @@ a {
     padding: 0 3px;
     font-size: 14px;
     display: none;
+    text-transform: none;
   }
 }
 
@@ -319,7 +318,7 @@ a {
   cursor: text;
   font-size: 12px;
   height: 2.4em;
-  margin: 0 0 0 0;
+  margin: 10px 0 0 0;
   padding: 6px 8px;
   transition: all .2s;
   resize: none;

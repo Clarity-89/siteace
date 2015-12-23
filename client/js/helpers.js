@@ -5,12 +5,6 @@ Template.website_list.helpers({
     }
 });
 
-Template.home.helpers({
-    topRated: function () {
-        return Websites.find({}, {sort: {upvotes: -1}, limit: 6});
-    }
-});
-
 Template.registerHelper('formatDate', function (date) {
-    return moment(date).format('DD-MM-YYYY');
+    return moment(date).format('D MMM YYYY');
 });
