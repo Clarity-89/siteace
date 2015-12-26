@@ -3,8 +3,19 @@ Template.website_list.helpers({
     websites: function () {
         return Websites.find({}, {sort: {upvotes: -1}});
     }
+
 });
 
+Template.website_item.helpers({
+    commentsCount: function () {
+        var site = Websites.findOne({_id: this._id}, {sort: {upvotes: -1}});
+        if (site.comments) {
+            return site.comments.length;
+        } else {
+            return 0;
+        }
+    }
+});
 Template.registerHelper('formatDate', function (date) {
     return moment(date).format('D MMM YYYY');
 });
@@ -12,6 +23,6 @@ Template.registerHelper('formatDate', function (date) {
 Template.comments.helpers({
 
     showAll: function () {
-       return Session.get('showAll');
+        return Session.get('showAll');
     }
 });
