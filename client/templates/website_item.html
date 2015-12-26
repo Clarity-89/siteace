@@ -3,10 +3,6 @@
 
     <div class="col s12 m6 offset-m3">
         <div class="card hoverable">
-            <!--<div class="card-image">
-                    <a href="/sites/{{_id}}"><img src="http://www.thinkstockphotos.com/CMS/StaticContent/Hero/TS_AnonHP_462882495_01.jpg"></a>
-                    <a href="{{url}}"><span class="card-title">{{title}}</span></a>
-                </div>-->
             <div class="card-content">
                 <a href="{{url}}" target="_blank"><span class="card-title">{{title}}</span></a>
                 <div class="divider"></div>
@@ -16,12 +12,19 @@
             </div>
             <div class="card-action valign-wrapper">
 
-                <a class="btn-floating waves-effect waves-light btn js-upvote valign" id="btn-custom-margin"><i
+                <div class="upvote"><a
+                        class="btn-floating waves-effect waves-light btn js-upvote" id="btn-custom-margin1"><i
                         class="material-icons">thumb_up</i></a>
 
                         <span class="votes valign">{{#if upvotes}} {{upvotes}} {{else}}
                             0 {{/if}}</span>
+                </div>
+                <div class="comment-count"><a
+                        class="btn-floating waves-effect waves-light btn js-upvote " id="btn-custom-margin2"><i
+                        class="material-icons">chat_bubble_outline</i></a>
 
+                        <span class="votes valign">{{#if upvotes}} {{upvotes}} {{else}}
+                            0 {{/if}}</span></div>
             </div>
             <div class="divider"></div>
             <div class="comment-placeholder-wrapper">

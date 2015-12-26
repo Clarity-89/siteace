@@ -50,11 +50,12 @@ ul {
   font-size: 18px;
 }
 
-.votes {
+.valign-wrapper .votes {
   margin-left: 10px;
   font-size: 22px;
   font-weight: 500;
   color: $accent-color;
+  display: inline;
 }
 
 .comments {
@@ -88,10 +89,6 @@ ul {
 
 #top-rated {
   color: black;
-}
-
-.votes {
-  font-size: 25px;
 }
 
 .right {
@@ -238,8 +235,13 @@ footer {
   text-align: right;
 }
 
-#btn-custom-margin {
+#btn-custom-margin1, #btn-custom-margin2 {
   margin: 0;
+}
+
+.comment-count {
+  position: absolute;
+  right: 20px;
 }
 
 .main-wrapper {
