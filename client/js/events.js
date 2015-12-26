@@ -18,6 +18,14 @@ Template.website_item.events({
         }
     },
 
+    "click .js-show-comments": function () {
+        if (Session.get('showAll')) {
+            Session.set('showAll', false);
+        } else {
+            Session.set('showAll', true);
+        }
+    },
+
     "click a": function (event) {
         event.stopPropagation();
     },

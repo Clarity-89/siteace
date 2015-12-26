@@ -245,7 +245,8 @@ footer {
 }
 
 .main-wrapper {
-  height: 100%;
+  position: relative;
+  min-height: 100%;
   padding: 64px 0;
   background: url("/sites.jpg") center no-repeat fixed;
   background-size: cover;

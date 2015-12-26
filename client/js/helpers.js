@@ -9,3 +9,9 @@ Template.registerHelper('formatDate', function (date) {
     return moment(date).format('D MMM YYYY');
 });
 
+Template.comments.helpers({
+
+    showAll: function () {
+       return Session.get('showAll');
+    }
+});
