@@ -1,0 +1,17 @@
+<template name="comments">
+    <div class="comment-placeholder-wrapper">
+        {{#if comments}}
+            <ul>
+                {{#each comments}}
+                    {{> comment}}
+                {{/each}}
+            </ul>
+        {{else}}
+            <p>No comments yet...</p>
+        {{/if}}
+        <form class="js-add-comment">
+            <textarea class="comment-placeholder" placeholder="Add a comment..."></textarea>
+            <button type="submit" class="waves-effect waves-teal btn">Comment</button>
+        </form>
+    </div>
+</template>
