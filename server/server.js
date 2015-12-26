@@ -24,7 +24,15 @@ Meteor.methods({
                         date: Date.now(),
                         user: comment.username
                     }
+                },
+                $set: {
+                    last_comment: {
+                        text: comment.text,
+                        date: Date.now(),
+                        user: comment.username
+                    }
                 }
+
             });
         } else {
             console.log('cant add empty comment', comment.text);
