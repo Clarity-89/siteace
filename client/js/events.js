@@ -66,7 +66,7 @@ Template.website_form.events({
         if (Meteor.user()) {
             $("#website_form").toggle('slow');
         } else {
-            Materialize.toast('You need to be logged in to be able to add a site', 4000);
+            Materialize.toast('You need to be logged in to add a site', 4000);
         }
     },
     "submit .js-form": function (event) {
@@ -139,3 +139,35 @@ Template.site.events({
         });
     }
 });
+
+Template.comments.events({
+    "mouseover .delete": function (event) {
+        if (Meteor.user().username === this.user) {
+            toggleClass(event.target, 'show');
+        }
+
+    },
+
+    "mouseout .delete": function (event) {
+        toggleClass(event.target, 'hide');
+    }
+});
+
+function toggleClass(target, action) {
+    var parent = target.parentNode;
+    var siblings = parent.childNodes;
+    for (var i = 0; i < siblings.length; i++) {
+        if (siblings[i].id === 'user') {
+            var sibling = siblings[i].childNodes;
+            for (var j = 0; j < sibling.length; j++) {
+                if (sibling[j].tagName === 'I') {
+                    if (action === 'hide') {
+                        sibling[j].classList.add('hide');
+                    } else {
+                        sibling[j].classList.remove('hide');
+                    }
+                }
+            }
+        }
+    }
+}

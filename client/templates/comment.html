@@ -1,6 +1,8 @@
 <template name="comment">
-    <li>
-        <p id="user">{{user}} <span id="date">{{formatDate this.date}}</span></p>
+    <li class="delete">
+        <p id="user">{{user}} <span id="date">{{formatDate this.date}}</span> <i class="fa fa-times right hide"
+                                                                                 ></i></p>
+
         <p id="comment-text">{{this.text}}</p>
     </li>
 </template>
