@@ -142,31 +142,25 @@ Template.site.events({
 
 Template.comments.events({
     "mouseover .delete": function (event) {
-        if (Meteor.user().username === this.user) {
-            toggleClass(event.target, 'show');
+        if (Meteor.user() && Meteor.user().username === this.user) {
+            toggleClass(event.currentTarget, 'show');
         }
 
     },
 
     "mouseout .delete": function (event) {
-        toggleClass(event.target, 'hide');
+        toggleClass(event.currentTarget, 'hide');
     }
 });
 
 function toggleClass(target, action) {
-    var parent = target.parentNode;
-    var siblings = parent.childNodes;
+    var siblings = target.childNodes;
     for (var i = 0; i < siblings.length; i++) {
-        if (siblings[i].id === 'user') {
-            var sibling = siblings[i].childNodes;
-            for (var j = 0; j < sibling.length; j++) {
-                if (sibling[j].tagName === 'I') {
-                    if (action === 'hide') {
-                        sibling[j].classList.add('hide');
-                    } else {
-                        sibling[j].classList.remove('hide');
-                    }
-                }
+        if (siblings[i].tagName === 'I') {
+            if (action === 'hide') {
+                siblings[i].classList.add('hide');
+            } else {
+                siblings[i].classList.remove('hide');
             }
         }
     }

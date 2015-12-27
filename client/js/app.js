@@ -29,4 +29,7 @@ Template.website_form.onRendered(function () {
 });
 
 
-
+Template.comments.onRendered(function () {
+    // Initialize tooltip
+    $('.tooltipped').tooltip({delay: 50});
+});
