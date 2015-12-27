@@ -63,13 +63,16 @@ Template.website_item.events({
 
 Template.website_form.events({
     "click .js-toggle-website-form": function (event) {
-        $("#website_form").toggle('slow');
+        if (Meteor.user()) {
+            $("#website_form").toggle('slow');
+        } else {
+            Materialize.toast('You need to be logged in to be able to add a site', 4000);
+        }
     },
     "submit .js-form": function (event) {
         event.preventDefault();
         var $url = $('#url'), $title = $('#title');
         if (!event.target.url.value) {
-            console.log('url');
             $url.addClass('error');
             return false;
         } else {

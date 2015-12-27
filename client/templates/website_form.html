@@ -1,10 +1,10 @@
 <template name="website_form">
-    {{#if currentUser}}
-        <a class="btn-floating btn-large waves-effect waves-light btn tooltipped js-toggle-website-form"
-           data-position="right" data-delay="50" data-tooltip="Add a new site" href="#">
-            <i class="material-icons">add</i>
-        </a>
-    {{/if}}
+    <a class="btn-floating btn-large waves-effect waves-light btn tooltipped js-toggle-website-form"
+       data-position="right" data-delay="50"
+       data-tooltip="Add a new site" href="#">
+        <i class="material-icons">add</i>
+    </a>
+
     <div class="form-wrapper">
         <div id="website_form" class="row hidden_div">
             <form class="js-form col s12 m6 offset-m3">
