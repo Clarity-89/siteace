@@ -19,10 +19,10 @@ Template.website_item.events({
     },
 
     "click .js-show-comments": function () {
-        console.log(this._id);
+
         var open = Session.get("Open") ? Session.get("Open").slice() : [];
         var index = open.indexOf(this._id);
-        console.log(index, open);
+
         if (index === -1) {
             open.push(this._id);
         } else {
@@ -127,7 +127,7 @@ Template.site.events({
         var website_id = this._id;
         var comment = $('#comment').val();
         var username = Meteor.user() ? Meteor.user().username : 'Anonymous';
-        console.log(username);
+
         Websites.update({_id: website_id}, {
             $push: {
                 comments: {
@@ -142,14 +142,25 @@ Template.site.events({
 
 Template.comments.events({
     "mouseover .comment": function (event) {
-        console.log('sup', event.currentTarget.childNodes, Meteor.user().username, this)
+        // Show delete button
         if (Meteor.user() && (Meteor.user().username === this.user || Meteor.user().username === this.last_comment.user)) {
             toggleClass(event.currentTarget, 'show');
         }
     },
 
     "mouseout .comment": function (event) {
+        // Hide delete button
         toggleClass(event.currentTarget, 'hide');
+    },
+
+    "click .fa.fa-times": function (event, template) {
+        var comment = {
+            id: template.data._id,
+            date: this.date || this.last_comment.date,
+            user: this.user || this.last_comment.user
+        };
+
+        Meteor.call('deleteComment', comment);
     }
 });
 
@@ -157,12 +168,9 @@ function toggleClass(target, action) {
     var siblings = target.childNodes;
     for (var i = 0; i < siblings.length; i++) {
         if (siblings[i].tagName === 'I') {
-            // console.log('got it')
             if (action === 'hide') {
-                console.log('inside hide')
                 siblings[i].classList.add('hide');
             } else {
-                console.log('inside show')
                 siblings[i].classList.remove('hide');
             }
         }

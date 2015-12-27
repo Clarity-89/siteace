@@ -11,9 +11,11 @@
                 <p>No comments yet...</p>
             {{/if}}
         {{else}}
-            {{> last_comment }}
+
+          {{> last_comment }}
 
         {{/if}}
+
         <form class="js-add-comment">
             <textarea class="comment-placeholder" placeholder="Add a comment..."></textarea>
             <button type="submit" class="waves-effect waves-teal btn">Comment</button>

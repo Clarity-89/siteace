@@ -18,7 +18,7 @@ Template.website_item.helpers({
 });
 
 Template.registerHelper('formatDate', function (date) {
-    return moment(date).format('D MMM YYYY');
+    return moment(date).format('D MMM YYYY')||undefined;
 });
 
 Template.comments.helpers({

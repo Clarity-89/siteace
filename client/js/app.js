@@ -33,3 +33,8 @@ Template.comments.onRendered(function () {
     // Initialize tooltip
     $('.tooltipped').tooltip({delay: 50});
 });
+
+Template.comment.onRendered(function () {
+    // Initialize tooltip
+    $('.tooltipped').tooltip({delay: 50});
+});
