@@ -11,9 +11,7 @@
                 <p>No comments yet...</p>
             {{/if}}
         {{else}}
-            <p id="user">{{last_comment.user}} <span id="date">{{formatDate last_comment.date}}</span><i
-                    class="fa fa-times right hide" id="delete"></i></p>
-            <p id="comment-text">{{last_comment.text}}</p>
+            {{> last_comment }}
 
         {{/if}}
         <form class="js-add-comment">

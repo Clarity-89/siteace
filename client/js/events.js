@@ -141,14 +141,14 @@ Template.site.events({
 });
 
 Template.comments.events({
-    "mouseover .delete": function (event) {
-        if (Meteor.user() && Meteor.user().username === this.user) {
+    "mouseover .comment": function (event) {
+        console.log('sup', event.currentTarget.childNodes, Meteor.user().username, this)
+        if (Meteor.user() && (Meteor.user().username === this.user || Meteor.user().username === this.last_comment.user)) {
             toggleClass(event.currentTarget, 'show');
         }
-
     },
 
-    "mouseout .delete": function (event) {
+    "mouseout .comment": function (event) {
         toggleClass(event.currentTarget, 'hide');
     }
 });
@@ -157,9 +157,12 @@ function toggleClass(target, action) {
     var siblings = target.childNodes;
     for (var i = 0; i < siblings.length; i++) {
         if (siblings[i].tagName === 'I') {
+            // console.log('got it')
             if (action === 'hide') {
+                console.log('inside hide')
                 siblings[i].classList.add('hide');
             } else {
+                console.log('inside show')
                 siblings[i].classList.remove('hide');
             }
         }

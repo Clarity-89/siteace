@@ -1,0 +1,9 @@
+<template name="last_comment">
+    <div class="comment">
+        <span id="user">{{last_comment.user}}</span>
+        <span id="date">{{formatDate last_comment.date}}</span>
+        <i class="fa fa-times right hide tooltipped" data-position="bottom" data-delay="50"
+           data-tooltip="Delete comment"></i>
+        <p id="comment-text">{{last_comment.text}}</p>
+    </div>
+</template>
