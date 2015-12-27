@@ -32,7 +32,6 @@ Meteor.methods({
                         user: comment.username
                     }
                 }
-
             });
         } else {
             console.log('cant add empty comment', comment.text);

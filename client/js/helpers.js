@@ -16,6 +16,7 @@ Template.website_item.helpers({
         }
     }
 });
+
 Template.registerHelper('formatDate', function (date) {
     return moment(date).format('D MMM YYYY');
 });
@@ -23,6 +24,9 @@ Template.registerHelper('formatDate', function (date) {
 Template.comments.helpers({
 
     showAll: function () {
-        return Session.get('showAll');
+        var open = Session.get("Open").slice();
+        var index = open.indexOf(this._id);
+
+        return !(index === -1);
     }
 });

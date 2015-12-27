@@ -19,11 +19,16 @@ Template.website_item.events({
     },
 
     "click .js-show-comments": function () {
-        if (Session.get('showAll')) {
-            Session.set('showAll', false);
+        console.log(this._id);
+        var open = Session.get("Open") ? Session.get("Open").slice() : [];
+        var index = open.indexOf(this._id);
+        console.log(index, open);
+        if (index === -1) {
+            open.push(this._id);
         } else {
-            Session.set('showAll', true);
+            open.splice(index, 1);
         }
+        Session.set('Open', open);
     },
 
     "click a": function (event) {
