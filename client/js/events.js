@@ -143,7 +143,7 @@ Template.site.events({
 Template.comments.events({
     "mouseover .comment": function (event) {
         // Show delete button
-        if (Meteor.user() && (Meteor.user().username === this.user || Meteor.user().username === this.last_comment.user)) {
+        if (Meteor.user() && ((this.user && Meteor.user().username === this.user) || Meteor.user().username === this.last_comment.user)) {
             toggleClass(event.currentTarget, 'show');
         }
     },
