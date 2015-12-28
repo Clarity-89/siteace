@@ -6,9 +6,9 @@ Meteor.startup(function () {
 Meteor.subscribe("websites");
 
 // Add username field to sign up form
-Accounts.ui.config({
+/*Accounts.ui.config({
     passwordSignupFields: 'USERNAME_AND_EMAIL'
-});
+});*/
 
 
 // Initialize materialize plugins

@@ -150,7 +150,7 @@ h4, h6 {
   min-height: 400px;
   margin: auto;
   padding: 20px 30px;
-  box-shadow: 0 15px 12px 0 rgba(0, 0, 0, .04), 0 19px 38px 0 rgba(0, 0, 0, .12);
+  box-shadow: 0 5px 12px 0 rgba(0, 0, 0, .04), 0 19px 38px 0 rgba(0, 0, 0, .12);
   border-radius: 8px;
   background: $primary-color-light;
 }
@@ -266,7 +266,6 @@ footer {
 .main-wrapper {
   position: relative;
   min-height: 100%;
-  height: inherit;
   padding: 64px 0;
   background: url("/sites.jpg") center no-repeat fixed;
   background-size: cover;
@@ -314,7 +313,7 @@ footer {
   }
 }
 
-a {
+#blue.a {
   color: $primary-color-text;
 }
 

@@ -20,7 +20,6 @@ accounts-password
 momentjs:moment
 iron:router
 acemtp:meta-extractor
-accounts-ui
 fortawesome:fontawesome
 fourseven:scss
 http
@@ -29,3 +28,5 @@ houston:admin
 
 npm-container
 materialize:materialize
+useraccounts:materialize
+useraccounts:iron-routing
