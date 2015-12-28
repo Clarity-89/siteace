@@ -12,19 +12,20 @@
             </div>
             <div class="card-action valign-wrapper">
 
-                <div class="upvote"><a
-                        class="btn-floating waves-effect waves-light btn js-upvote" id="btn-custom-margin1"><i
-                        class="material-icons">thumb_up</i></a>
-
+                <div class="js-upvote valign-wrapper social">
+                    <!--<a class="btn-floating waves-effect waves-light btn js-upvote" id="btn-custom-margin1"><i
+                            class="material-icons">thumb_up</i>
+                    </a>-->
+                    <i class="material-icons valign">thumb_up</i>
                         <span class="votes valign">{{#if upvotes}} {{upvotes}} {{else}}
                             0 {{/if}}</span>
                 </div>
-                <div class="comment-count"><a
-                        class="btn-floating waves-effect waves-light btn js-show-comments " id="btn-custom-margin2"><i
-                        class="material-icons">chat_bubble_outline</i></a>
+                <div class="comment-count js-show-comments valign-wrapper social">
+                    <i class="material-icons valign">comment</i>
 
                         <span class="votes valign">{{#if upvotes}} {{commentsCount}} {{else}}
-                            0 {{/if}}</span></div>
+                            0 {{/if}}</span>
+                </div>
             </div>
             <div class="divider"></div>
             {{> comments}}

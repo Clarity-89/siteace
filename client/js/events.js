@@ -9,7 +9,7 @@ Template.website_item.events({
 
             // make sure a user hasn't voted before
             if (!hasUpvoted) {
-                var sites = {_id: website_id, upvotedBy: user}
+                var sites = {_id: website_id, upvotedBy: user};
                 Meteor.call('upvote', sites);
             }
             return false; // prevent the button from reloading the page
@@ -18,9 +18,8 @@ Template.website_item.events({
         }
     },
 
-    "click .js-show-comments": function () {
-
-        var open = Session.get("Open") ? Session.get("Open").slice() : [];
+    "click .js-show-comments": function (event) {
+         var open = Session.get("Open") ? Session.get("Open").slice() : [];
         var index = open.indexOf(this._id);
 
         if (index === -1) {
@@ -163,8 +162,7 @@ Template.comments.events({
 
         Meteor.call('deleteComment', comment);
     }
-})
-;
+});
 
 function toggleClass(target, action) {
     var siblings = target.childNodes;

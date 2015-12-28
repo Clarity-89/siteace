@@ -8,17 +8,16 @@
                     {{/each}}
                 </ul>
             {{else}}
-                <p>No comments yet...</p>
+                <p class="no-comments">No comments yet...</p>
             {{/if}}
         {{else}}
 
           {{> last_comment }}
 
         {{/if}}
-
-        <form class="js-add-comment">
-            <textarea class="comment-placeholder" placeholder="Add a comment..."></textarea>
-            <button type="submit" class="waves-effect waves-teal btn">Comment</button>
-        </form>
     </div>
+    <form class="js-add-comment add-comment">
+        <textarea class="comment-placeholder" placeholder="Add a comment..."></textarea>
+        <button type="submit" class="btn waves-effect waves-orange comment-button">Comment</button>
+    </form>
 </template>

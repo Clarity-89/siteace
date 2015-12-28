@@ -1,7 +1,16 @@
 /*Color scheme for the site */
-$primary-color-dark: #388E3C;
+/*$primary-color-dark: #388E3C;
 $primary-color: #4CAF50;
 $primary-color-light: #C8E6C9;
+$primary-color-text: #FFFFFF;
+$accent-color: #FF5722;
+$primary-text-color: #212121;
+$secondary-text-color: #727272;
+$divider-color: #B6B6B6;*/
+
+$primary-color-dark: #303F9F;
+$primary-color: #3F51B5;
+$primary-color-light: #C5CAE9;
 $primary-color-text: #FFFFFF;
 $accent-color: #FF5722;
 $primary-text-color: #212121;
@@ -54,7 +63,7 @@ ul {
   margin-left: 10px;
   font-size: 22px;
   font-weight: 500;
-  color: $accent-color;
+  color: $primary-text-color;
   display: inline;
 }
 
@@ -108,7 +117,8 @@ ul {
   height: 100%;
   min-height: 100%;
   color: white;
-  background: rgba(76, 175, 80, 0.7);
+  /* background: rgba(76, 175, 80, 0.7);*/
+  background: rgba(63, 81, 181, 0.71);;
   z-index: 999;
 }
 
@@ -248,8 +258,9 @@ footer {
   position: relative;
   min-height: 100%;
   padding: 64px 0;
-  background: url("/sites.jpg") center no-repeat fixed;
-  background-size: cover;
+  /* background: url("/sites.jpg") center no-repeat fixed;
+   background-size: cover;*/
+  background: $primary-color;
   margin-bottom: -80px; /*height of the footer*/
 }
 
@@ -297,11 +308,11 @@ a {
   color: $primary-text-color;
 }
 
-.comment-placeholder-wrapper {
-  margin: 0 20px 0 20px;
-  padding: 20px 0 20px 0;
+.comment-placeholder-wrapper, .add-comment {
+  padding: 0 20px 20px;
   background-color: #f5f5f5;
   color: $primary-text-color;
+  overflow: auto;
   .btn {
     background-color: $accent-color;
     margin-top: 5px;
@@ -311,6 +322,11 @@ a {
     text-transform: none;
   }
 }
+
+/*.comment-placeholder-wrapper {
+  max-height: 150px;
+  transition: all 2s;
+}*/
 
 .comment-placeholder {
   box-sizing: border-box;
@@ -322,11 +338,45 @@ a {
   height: 2.4em;
   margin: 10px 0 0 0;
   padding: 6px 8px;
-  transition: all .2s;
+  transition: all .3s;
   resize: none;
   overflow: hidden;
 }
 
 .fa.fa-times:hover {
   cursor: pointer;
+}
+
+.comment {
+  margin-top: 15px;
+}
+
+.no-comments {
+  margin-top: 15px;
+}
+
+.social {
+  border: 1px solid #d9d9d9;
+  padding: .3em .7em;
+  border-radius: 3px;
+  .material-icons {
+    color: $primary-text-color;
+    display: inline;
+  }
+}
+
+.social:hover {
+  cursor: pointer;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, .05);
+  border-color: #bfbfbf;
+}
+
+.btn.comment-button {
+  background-color: white;
+  color: $primary-text-color;
+}
+
+/*custom waves color */
+.waves-effect.waves-orange .waves-ripple{
+  background: rgba(255, 87, 34, 0.65);
 }

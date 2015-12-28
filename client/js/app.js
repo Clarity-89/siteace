@@ -1,6 +1,6 @@
 Meteor.startup(function () {
     // Include materialize.css file before Meteor's combined css to allow it being overridden
-    $('head').prepend('<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.4/css/materialize.min.css">');
+   // $('head').prepend('<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.4/css/materialize.min.css">');
 });
 
 Meteor.subscribe("websites");
@@ -28,7 +28,6 @@ Template.website_form.onRendered(function () {
     $('.tooltipped').tooltip({delay: 50});
 });
 
-
 Template.comments.onRendered(function () {
     // Initialize tooltip
     $('.tooltipped').tooltip({delay: 50});
@@ -39,6 +38,10 @@ Template.comment.onRendered(function () {
     $('.tooltipped').tooltip({delay: 50});
 });
 
+Template.last_comment.onRendered(function () {
+    // Initialize tooltip
+    $('.tooltipped').tooltip({delay: 50});
+});
 Template.home.onRendered(function () {
 // Make the home page always start at the top
     window.scrollTo(0, 0);
