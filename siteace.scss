@@ -23,6 +23,18 @@ $divider-color: #B6B6B6;
   color: $text-color;
 }
 
+@mixin main($background) {
+  display: table;
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+  color: white;
+  /* background: rgba(76, 175, 80, 0.7);*/
+  /*background: rgba(63, 81, 181, 0.71);*/
+  background: $background;
+  z-index: 999;
+}
+
 html,
 body {
   height: 100%;
@@ -102,24 +114,6 @@ ul {
 
 .right {
   margin-right: 15px;
-}
-
-.main-outer {
-  background: url('background.jpg') center no-repeat;
-  background-size: cover;
-  height: 100%;
-  min-height: 100%;
-}
-
-.main {
-  display: table;
-  width: 100%;
-  height: 100%;
-  min-height: 100%;
-  color: white;
-  /* background: rgba(76, 175, 80, 0.7);*/
-  background: rgba(63, 81, 181, 0.71);;
-  z-index: 999;
 }
 
 /*Add more margin to brand*/
@@ -254,13 +248,27 @@ footer {
   right: 20px;
 }
 
+.main-outer {
+  background: url('background.jpg') center no-repeat;
+  background-size: cover;
+  height: 100%;
+  min-height: 100%;
+}
+
+.main1 {
+  @include main(rgba(63, 81, 181, 0.71));
+}
+
+.main2{
+  @include main(rgba(63, 81, 181, 0.18));
+}
 .main-wrapper {
   position: relative;
   min-height: 100%;
   padding: 64px 0;
-  /* background: url("/sites.jpg") center no-repeat fixed;
-   background-size: cover;*/
-  background: $primary-color;
+  background: url("/sites.jpg") center no-repeat fixed;
+  background-size: cover;
+  /*background: $primary-color;*/
   margin-bottom: -80px; /*height of the footer*/
 }
 
@@ -305,7 +313,7 @@ footer {
 }
 
 a {
-  color: $primary-text-color;
+  color: $primary-color-text;
 }
 
 .comment-placeholder-wrapper, .add-comment {
@@ -377,6 +385,15 @@ a {
 }
 
 /*custom waves color */
-.waves-effect.waves-orange .waves-ripple{
+.waves-effect.waves-orange .waves-ripple {
   background: rgba(255, 87, 34, 0.65);
+}
+
+.card.hoverable:hover {
+  box-shadow: white;
+}
+
+#blue {
+  background-color: $primary-color;
+  color: $primary-color-text;
 }
