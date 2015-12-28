@@ -259,12 +259,14 @@ footer {
   @include main(rgba(63, 81, 181, 0.71));
 }
 
-.main2{
+.main2 {
   @include main(rgba(63, 81, 181, 0.18));
 }
+
 .main-wrapper {
   position: relative;
   min-height: 100%;
+  height: inherit;
   padding: 64px 0;
   background: url("/sites.jpg") center no-repeat fixed;
   background-size: cover;
