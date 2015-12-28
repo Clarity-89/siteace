@@ -38,3 +38,8 @@ Template.comment.onRendered(function () {
     // Initialize tooltip
     $('.tooltipped').tooltip({delay: 50});
 });
+
+Template.home.onRendered(function () {
+// Make the home page always start at the top
+    window.scrollTo(0, 0);
+});
