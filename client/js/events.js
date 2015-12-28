@@ -48,11 +48,12 @@ Template.website_item.events({
 
     "submit .js-add-comment": function (event) {
         event.preventDefault();
+        console.log(Meteor.user().profile.text);
         var textarea = event.target.childNodes[1]; // The second child node is textarea
         var comment = {
             id: this._id,
             text: textarea.value,
-            username: Meteor.user() ? Meteor.user().username : 'Anonymous'
+            username: Meteor.user() ? Meteor.user().profile.text : 'Anonymous'
         };
 
         Meteor.call('addComment', comment);
@@ -142,7 +143,7 @@ Template.site.events({
 Template.comments.events({
     "mouseover .comment": function (event) {
         // Show delete button
-        var username = Meteor.user().username;
+        var username = Meteor.user().profile.text;
         if (Meteor.user() && ((this.user && username === this.user) || (this.last_comment && username === this.last_comment.user))) {
             toggleClass(event.currentTarget, 'show');
         }
