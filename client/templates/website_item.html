@@ -18,7 +18,8 @@
                         <span class="votes valign">{{#if upvotes}} {{upvotes}} {{else}}
                             0 {{/if}}</span>
                 </div>
-                <div class="comment-count js-show-comments valign-wrapper social">
+                <div class="comment-count js-show-comments valign-wrapper social tooltipped" data-position="right"
+                     data-delay="50" data-tooltip="Show/hide all comments">
                     <i class="material-icons valign">comment</i>
 
                         <span class="votes valign">{{#if upvotes}} {{commentsCount}} {{else}}
