@@ -48,12 +48,15 @@ Template.website_item.events({
         // Change comment text area to be editable
         var el = event.target;
         var sibling = el.nextElementSibling;
+        var sibling2 = sibling.nextElementSibling;
+
         el.style.height = "4em";
         el.setAttribute("contentEditable", 'true');
         el.setAttribute("placeholder", '');
         el.style.color = '#212121';
         el.style.overflow = 'auto';
-        sibling.style.display = 'block';
+        sibling.style.display = 'inline';
+        sibling2.style.display = 'inline';
     },
 
     "submit .js-add-comment": function (event) {
@@ -68,6 +71,22 @@ Template.website_item.events({
 
         Meteor.call('addComment', comment);
         textarea.value = '';
+    },
+
+    "click .cancel-button": function (event) {
+
+        var form = event.target.parentNode;
+        var el = form.childNodes[1];
+        var sibling = form.childNodes[3];
+        var sibling2 = form.childNodes[5];
+
+        el.style.height = "2.4em";
+        el.setAttribute("contentEditable", 'false');
+        el.setAttribute("placeholder", 'Add a comment...');
+        el.style.color = '#999';
+        el.style.overflow = 'hidden';
+        sibling.style.display = 'none';
+        sibling2.style.display = 'none';
     }
 });
 
@@ -133,7 +152,6 @@ Template.website_form.events({
 
 Template.comments.events({
     "mouseover .comment": function (event) {
-        console.log(this, Meteor.user())
         // Show delete button
         var id = Meteor.userId();
         if (Meteor.user() && ((this.userId && id === this.userId) || (this.last_comment && id === this.last_comment.userId))) {

@@ -376,9 +376,10 @@ footer {
   border-color: #bfbfbf;
 }
 
-.btn.comment-button {
+.btn.comment-button, .btn.cancel-button {
   background-color: white;
   color: $primary-text-color;
+
 }
 
 /*custom waves color */
