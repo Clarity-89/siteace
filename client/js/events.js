@@ -157,6 +157,19 @@ Template.comments.events({
     }
 });
 
+Template.contact.events({
+    "submit #contact-form": function (event) {
+        var values = {
+            name: $('#first_name').val(),
+            email: $('#email').val(),
+            message: $('#textarea-feedback').val()
+        };
+
+        Meteor.call('sendFeedback', values);
+    }
+});
+
+// Helper function
 function toggleClass(target, action) {
     var siblings = target.childNodes;
     for (var i = 0; i < siblings.length; i++) {

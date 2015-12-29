@@ -57,5 +57,15 @@ Meteor.methods({
                 $set: {last_comment: {text: '', date: '', user: ''}}
             });
         }
+    },
+
+    sendFeedback: function (data) {
+
+        Email.send({
+            to: 'homes89@ukr.net',
+            from: data.email,
+            subject: 'Site Ace feedback',
+            text: data.message + '\n' + 'Regards, ' + data.name
+        });
     }
 });

@@ -30,3 +30,4 @@ npm-container
 materialize:materialize
 useraccounts:materialize
 useraccounts:iron-routing
+email
