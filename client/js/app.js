@@ -1,10 +1,9 @@
-
 Meteor.subscribe("websites");
 
 // Add username field to sign up form
 /*Accounts.ui.config({
-    passwordSignupFields: 'USERNAME_AND_EMAIL'
-});*/
+ passwordSignupFields: 'USERNAME_AND_EMAIL'
+ });*/
 
 
 // Initialize materialize plugins
@@ -23,21 +22,6 @@ Template.website_form.onRendered(function () {
     // Initialize tooltip
     $('.tooltipped').tooltip({delay: 50});
 });
-
-/*Template.comments.onRendered(function () {
-    // Initialize tooltip
-    $('.tooltipped').tooltip({delay: 50});
-});
-
-Template.comment.onRendered(function () {
-    // Initialize tooltip
-    $('.tooltipped').tooltip({delay: 50});
-});
-
-Template.last_comment.onRendered(function () {
-    // Initialize tooltip
-    $('.tooltipped').tooltip({delay: 50});
-});*/
 
 Template.home.onRendered(function () {
 // Make the home page always start at the top

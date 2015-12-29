@@ -58,7 +58,6 @@ Template.website_item.events({
 
     "submit .js-add-comment": function (event) {
         event.preventDefault();
-        console.log(Meteor.user());
         var textarea = event.target.childNodes[1]; // The second child node in textarea
         var comment = {
             id: this._id,
@@ -134,6 +133,7 @@ Template.website_form.events({
 
 Template.comments.events({
     "mouseover .comment": function (event) {
+        console.log(this, Meteor.user())
         // Show delete button
         var id = Meteor.userId();
         if (Meteor.user() && ((this.userId && id === this.userId) || (this.last_comment && id === this.last_comment.userId))) {
