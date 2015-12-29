@@ -22,22 +22,24 @@ Meteor.methods({
                     comments: {
                         text: comment.text,
                         date: Date.now(),
-                        user: comment.username
+                        user: comment.username,
+                        userId: comment.userId
                     }
                 },
                 $set: {
                     last_comment: {
                         text: comment.text,
                         date: Date.now(),
-                        user: comment.username
+                        user: comment.username,
+                        userId: comment.userId
                     }
                 }
             });
         } else {
             console.log('cant add empty comment', comment.text);
         }
-
     },
+
     deleteComment: function (comment) {
         Websites.update({_id: comment.id}, {
             $pull: {comments: {date: comment.date}}

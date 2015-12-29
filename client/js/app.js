@@ -24,7 +24,7 @@ Template.website_form.onRendered(function () {
     $('.tooltipped').tooltip({delay: 50});
 });
 
-Template.comments.onRendered(function () {
+/*Template.comments.onRendered(function () {
     // Initialize tooltip
     $('.tooltipped').tooltip({delay: 50});
 });
@@ -37,7 +37,7 @@ Template.comment.onRendered(function () {
 Template.last_comment.onRendered(function () {
     // Initialize tooltip
     $('.tooltipped').tooltip({delay: 50});
-});
+});*/
 
 Template.home.onRendered(function () {
 // Make the home page always start at the top
