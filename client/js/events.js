@@ -1,5 +1,15 @@
 // template events
 
+Template.home.events({
+    "click #join": function () {
+        if (Meteor.user()) {
+            Router.go('/sites');
+        } else {
+            Router.go('/sign-up');
+        }
+    }
+});
+
 Template.website_item.events({
     "click .js-upvote": function (event) {
         if (Meteor.user()) {
@@ -19,7 +29,7 @@ Template.website_item.events({
     },
 
     "click .js-show-comments": function (event) {
-         var open = Session.get("Open") ? Session.get("Open").slice() : [];
+        var open = Session.get("Open") ? Session.get("Open").slice() : [];
         var index = open.indexOf(this._id);
 
         if (index === -1) {
@@ -117,25 +127,6 @@ Template.website_form.events({
 
             document.getElementById('title').value = res.title || backupTitle;
             document.getElementById('description').value = res.description || '';
-        });
-    }
-});
-
-Template.site.events({
-    "click .js-add-comment": function (event) {
-
-        var website_id = this._id;
-        var comment = $('#comment').val();
-        var username = Meteor.user() ? Meteor.user().username : 'Anonymous';
-
-        Websites.update({_id: website_id}, {
-            $push: {
-                comments: {
-                    text: comment,
-                    date: moment().format('MMM DD YYYY, h:mm:ss a'),
-                    user: username
-                }
-            }
         });
     }
 });
