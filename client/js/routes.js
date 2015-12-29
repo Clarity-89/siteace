@@ -13,6 +13,11 @@ Router.route('/sites', function () {
     this.render('sites');
     this.render('footer', {to: 'footer'});
 });
+Router.route('/contact', function () {
+    this.render('navbar', {to: 'navbar'});
+    this.render('contact');
+    this.render('footer', {to: 'footer'});
+});
 
 Router.route('/sites/:_id', function () {
     this.render('navbar', {to: 'navbar'});

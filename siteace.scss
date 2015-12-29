@@ -398,3 +398,12 @@ footer {
 #at-nav-button {
   margin-top: 0;
 }
+
+.custom-container {
+  height: 100%;
+  position: relative;
+  padding: 64px 0;
+  margin-bottom: -80px; /*height of the footer*/
+  background-color: #ededed;
+  color: $secondary-text-color;
+}
