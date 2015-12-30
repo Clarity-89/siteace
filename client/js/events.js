@@ -74,19 +74,19 @@ Template.website_item.events({
     },
 
     "click .cancel-button": function (event) {
-
+        event.preventDefault();
         var form = event.target.parentNode;
-        var el = form.childNodes[1];
-        var sibling = form.childNodes[3];
-        var sibling2 = form.childNodes[5];
-
-        el.style.height = "2.4em";
-        el.setAttribute("contentEditable", 'false');
-        el.setAttribute("placeholder", 'Add a comment...');
-        el.style.color = '#999';
-        el.style.overflow = 'hidden';
-        sibling.style.display = 'none';
-        sibling2.style.display = 'none';
+        Array.prototype.slice.call(form.childNodes).forEach(function (el) {
+            if (el.tagName === 'TEXTAREA') {
+                el.style.height = "2.4em";
+                el.setAttribute("contentEditable", 'false');
+                el.setAttribute("placeholder", 'Add a comment...');
+                el.style.color = '#999';
+                el.style.overflow = 'hidden';
+            } else if (el.tagName === 'BUTTON') {
+                el.style.display = 'none';
+            }
+        });
     }
 });
 
