@@ -408,6 +408,13 @@ footer {
   background-color: #ffffff;
   color: $secondary-text-color;
 }
-#toTop {
 
+#toTop {
+  position: absolute;
+  right: 20px;
+  bottom: 50px;
+}
+
+.row {
+  position: relative;
 }

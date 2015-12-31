@@ -26,6 +26,3 @@ Template.website_form.onRendered(function () {
     $('.tooltipped').tooltip({delay: 50});
 });
 
-Template.sites.onRendered(function () {
-
-});
