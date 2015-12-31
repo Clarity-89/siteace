@@ -187,6 +187,15 @@ Template.contact.events({
     }
 });
 
+Template.sites.events({
+    "click #toTop": function (event) {
+        // Scroll to top
+        $('html, body').stop().animate({scrollTop: 0}, 700, 'swing');
+        event.preventDefault();
+
+    }
+});
+
 // Helper function
 function toggleClass(target, action) {
     var siblings = target.childNodes;

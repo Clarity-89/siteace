@@ -194,7 +194,7 @@ h4, h6 {
   margin-top: -10%;
 }
 
-.waves-effect.waves-light.btn, #chevron-button {
+.waves-effect.waves-light.btn, #chevron-button, #toTop {
   background-color: $accent-color;
 }
 
@@ -407,4 +407,7 @@ footer {
   margin-bottom: -80px; /*height of the footer*/
   background-color: #ffffff;
   color: $secondary-text-color;
+}
+#toTop {
+
 }

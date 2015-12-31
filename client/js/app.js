@@ -16,6 +16,9 @@ Template.home.onRendered(function () {
         }, 1500, 'easeInOutExpo');
         event.preventDefault();
     });
+
+    // Make the home page always start at the top
+    window.scrollTo(0, 0);
 });
 
 Template.website_form.onRendered(function () {
@@ -23,7 +26,6 @@ Template.website_form.onRendered(function () {
     $('.tooltipped').tooltip({delay: 50});
 });
 
-Template.home.onRendered(function () {
-// Make the home page always start at the top
-    window.scrollTo(0, 0);
+Template.sites.onRendered(function () {
+
 });
