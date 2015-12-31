@@ -19,6 +19,9 @@ Template.home.onRendered(function () {
 
     // Make the home page always start at the top
     window.scrollTo(0, 0);
+
+    // Initialize sidenav for mobile
+    $(".button-collapse").sideNav();
 });
 
 Template.website_form.onRendered(function () {
@@ -26,3 +29,7 @@ Template.website_form.onRendered(function () {
     $('.tooltipped').tooltip({delay: 50});
 });
 
+Template.sites.onRendered(function () {
+    // Initialize sidenav for mobile
+    $(".button-collapse").sideNav();
+});
