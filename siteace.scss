@@ -52,35 +52,12 @@ ul {
   list-style-type: none;
 }
 
-.alert {
-  display: none;
-}
-
-#heading {
-  text-align: center;
-  margin-top: 30px;
-  /* margin-bottom: 30px;*/
-}
-
-.thumbnail {
-  height: 200px;
-  overflow: auto;
-}
-
-.title {
-  font-size: 18px;
-}
-
 .valign-wrapper .votes {
   margin-left: 10px;
   font-size: 22px;
   font-weight: 500;
   color: $primary-text-color;
   display: inline;
-}
-
-.comments {
-  margin: 3% auto 3% auto;
 }
 
 #date {
@@ -98,22 +75,6 @@ ul {
   margin-top: 5px;
   font-weight: 600;
   font-size: 13px;
-}
-
-#padded {
-  padding: 15px;
-}
-
-#signup {
-  float: left;
-}
-
-#top-rated {
-  color: black;
-}
-
-.right {
-  margin-right: 15px;
 }
 
 /*Add more margin to brand*/
@@ -169,7 +130,7 @@ h4, h6 {
 }*/
 
 .promo-header {
-  @include header-text($primary-text-color, 38px);
+  @include header-text($primary-text-color, 2.53em);
   font-weight: 300;
 }
 
@@ -269,7 +230,6 @@ footer {
   padding: 64px 0;
   background: url("/sites.jpg") center no-repeat fixed;
   background-size: cover;
-  /*background: $primary-color;*/
   margin-bottom: -80px; /*height of the footer*/
 }
 
@@ -379,7 +339,6 @@ footer {
 .btn.comment-button, .btn.cancel-button {
   background-color: white;
   color: $primary-text-color;
-
 }
 
 /*custom waves color */
