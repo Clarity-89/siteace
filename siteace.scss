@@ -181,7 +181,7 @@ footer {
   background: white;
   color: $accent-color;
   border: solid 1px $accent-color;
-  margin-top: 30px;
+  margin-top: 3em;
 }
 
 .btn-custom:hover {
@@ -340,9 +340,14 @@ footer {
   border-color: #bfbfbf;
 }
 
-.btn.comment-button, .btn.cancel-button {
+.btn.cancel-button {
   background-color: white;
   color: $primary-text-color;
+}
+
+.btn.comment-button {
+  background-color: #81c784;
+  color: white;
 }
 
 /*custom waves color */
@@ -382,6 +387,10 @@ footer {
   position: relative;
 }
 
+#contact-form {
+  margin-bottom: 30px;
+}
+
 /*Media queries*/
 
 @media only screen and (max-width: 480px) {
@@ -392,3 +401,4 @@ footer {
     margin-top: -30%;
   }
 }
+
